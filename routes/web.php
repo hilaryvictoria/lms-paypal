@@ -1,5 +1,6 @@
 <?php
 
+// Importing all the controllers used in the webapp
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
@@ -26,37 +27,52 @@ use App\Http\Controllers\Member\MemberDashboardController;
 |
 */
 
+// Builtin authentication routes
 Auth::routes();
 
+// Index route
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Checkout routes
 Route::get('checkout/{courseSlug}', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth');
+// route for data validation before payment
 Route::post('checkout/validate/{courseId}/{courseSlug}', [CheckoutController::class, 'prePaymentValidation'])->name('checkout.validate');
+// route for processing data after successful payment
 Route::post('checkout/fulfill/order', [CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfill.order');
 Route::post('payment/braintree', [BraintreeController::class, 'braintreePayment'])->name('braintree.payment');
 Route::post('payment/stripe/{paymentIntentId}', [StripeController::class, 'getStripePaymentIntent'])->name('stripe.payment');
 Route::get('checkout/success/thank-you', [CheckoutController::class, 'showThanks'])->name('thanks');
 
+// Privacy & Terms routes, both managed by PageController
 Route::get('privacy', [PageController::class, 'privacy'])->name('privacy');
 Route::get('terms', [PageController::class, 'terms'])->name('terms');
 
+// Frontend Course routes
 Route::get('courses', [FrontendCourseController::class, 'index'])->name('courses.index');
 Route::get('courses/{courseId}', [FrontendCourseController::class, 'show'])->name('courses.show');
 
 // Routes for Admin group
 Route::group([
-    'as'=>'admin.',
-    'prefix'=>'admin',
-    'middleware' => ['auth', 'admin']], // Checks if user is admin or not
+       // This options will be applied to all the routes I will define below into the anonymous function
+    'as'=>'admin.', // all the names of the routes will start with member.
+    'prefix'=>'admin', // all the url of the routes will start with /member.
+    'middleware' => ['auth', 'admin']], // only user who is both logged in and admin can reach the routes defined 
 
     function() {
         // Admin dashboard
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        
         //Course routes
         Route::get('courses', [CourseController::class, 'index'])->name('courses');
+        // Create a new course
         Route::get('courses/create', [CourseController::class, 'create'])->name('courses.create');
+        // Save a new course (post request from the form on courses.create)
         Route::post('courses', [CourseController::class, 'store'])->name('courses.store');
+        // Edit an existing course
         Route::get('courses/{courseId}/edit', [CourseController::class, 'edit'])->name('courses.edit');
+        // Update an existing course
         Route::put('courses/{courseId}', [CourseController::class, 'update'])->name('courses.update');
+        // Delete a course
         Route::delete('courses/{courseId}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
         // Braintree routes
@@ -88,9 +104,10 @@ Route::group([
 
 // Routes for Member group
 Route::group([
-    'as'=>'member.',
-    'prefix'=>'member',
-    'middleware' => ['auth']],
+    // This options will be applied to all the routes I will define below into the anonymous function
+    'as'=>'member.', // all the names of the routes will start with member.
+    'prefix'=>'member', // all the routes defined will start with member/
+    'middleware' => ['auth']], // only logged in user can reach the routes defined below
 
     function() {
         Route::get('dashboard', [MemberDashboardController::class, 'index'])->name('dash');

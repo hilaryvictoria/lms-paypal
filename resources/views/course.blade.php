@@ -26,7 +26,7 @@
     <div class="row mb-5">
         <div class="col-lg-6">
             <div class="course-img">
-                <img src="{{ asset('public/uploads/images/' . $course->image) }}" class="img-fluid mr-3" alt="">
+                <img src="{{ asset('/uploads/images/' . $course->image) }}" class="img-fluid mr-3" alt="">
             </div>
         </div>
         <div class="col-lg-6">
@@ -34,13 +34,17 @@
                 <div class="course-desc">
                     <p>{{$course->description}}</p>
                 </div>
+                {{-- if user has not bought the course we show the price with the buy now button pointing to the checkout route --}}
                 @if(!$userBoughtCourse)
                     <div class="course-price">
+                        {{-- I return the variable currency I formatted in the FrontendCourseController and I am using the CurrencyHelper's method getSetPriceFormat to format the course's price --}}
                         <p>{{$currency}}{{App\Helpers\CurrencyHelper::getSetPriceFormat($course->price)}}</p>
                     </div>
                     <div class="course-buy-btn">
+                        {{-- checkout button --}}
                         <a href="{{route('checkout', $course->slug)}}" class="btn btn-warning" onclick="showLoadSpinner();"><span class="spinner-border spinner-border-sm" id="spinnerOnBtn" role="status" aria-hidden="true" style="display:none;"></span> Buy Now <i class="fas fa-cart-plus"></i></a>
                     </div>
+                    {{-- if the user didn't buy the course we show a message --}}
                 @else
                     <div>
                         <p style="color:green;font-size:20px;"><strong>You have access to this course!</strong></p>

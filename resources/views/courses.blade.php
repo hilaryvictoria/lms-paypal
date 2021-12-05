@@ -25,11 +25,12 @@
 
     <div class="row">
         <div class="col-sm-6 col-md-12 col-lg-12">
+            {{-- we loop through the courses --}}
             @foreach($courses as $course)
                 <div class="course-container mb-5">
                     <div class="media">
                         <div class="course-img">
-                        <img src="{{ asset('public/uploads/images/' . $course->image) }}" class="img-fluid mr-3" alt="">
+                        <img src="{{ asset('/uploads/images/' . $course->image) }}" class="img-fluid mr-3" alt="">
                         </div>
                         <div class="media-body">
                             <h2><a href="{{ route('courses.show', $course->id) }}">{{$course->title}}</a></h2>

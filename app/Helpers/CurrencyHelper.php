@@ -67,23 +67,33 @@ class CurrencyHelper
         return $priceStringToReturn;
     }
 
+    // This function look for the currency we set in the settings
+    // if we set USD, EUR or GBP and we checked we tant the currency symbol to be shown it returns the symbol
     public static function getCurrencyString()
     {
+        // getting our settings 
         $settings = Setting::first();
+        // we are getting currency from our settings 'USD'
         $currencyText = $settings->currency;
+        // we concatenate a space to the currencyText 'USD '
         $adjustedCurrencyText = $currencyText . ' ';
+        // If in the settings we set that we want to use a currency symbol
         if( $settings->use_currency_symbol == 1 )
         {
+            // if our currency is either USD EUR or GBP
             if( $currencyText == 'USD' || $currencyText == 'EUR' || $currencyText == 'GBP'  )
             {
+                // we get the currency from our currency table
                 $currencyData = Currency::where('name', $currencyText)->first();
+                // if we found a currency (currencyData should not be null)
                 if( !is_null($currencyData) )
                 {
+                    // we are getting the symbol of the currencyData associated array
                     $adjustedCurrencyText = $currencyData->symbol;
                 }
             }
         }
-
+        // we will return the symbol
         return $adjustedCurrencyText;
     }
 }

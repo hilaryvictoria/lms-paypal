@@ -1,7 +1,7 @@
 @extends('layouts.backend.admin-app')
 
 @push('css')
-<link rel="stylesheet" href="{{ asset('public/assets/backend/css/custom-admin.css') }}">
+<link rel="stylesheet" href="{{ asset('/assets/backend/css/custom-admin.css') }}">
 @endpush
 
 @section('content')
@@ -72,6 +72,7 @@
 
                             </div>
                             <div class="col-6">
+                                {{-- the old() method finds a value for the input, the previous one that was filled in before the validation failed --}}
                                 <input class="form-control" type="number" step="0.01" min="1" name="course_price" id="title-text-input" value="{{ old('course_price') }}">
                                 <p style="color:red;">{{ $errors->first('course_price') }}</p>
                             </div>

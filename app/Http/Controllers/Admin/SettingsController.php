@@ -21,6 +21,7 @@ class SettingsController extends Controller
 
     public function update(Request $request)
     {
+        // validation: all those fields are required and boolean
         $validator = Validator::make($request->all(), [
             'currency' => ['required', 'string', 'exists:currencies,name'],
             'use_integer_prices' => ['required', 'boolean'],
@@ -45,37 +46,33 @@ class SettingsController extends Controller
             'enable_pp_smart_venmo' => ['required', 'boolean'],
         ]);
 
-        if( $validator->fails() )
-        {
+        if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        if( ($request->enable_braintree) && ($request->enable_paypal_in_bt) && ($request->enable_paypal_smart) )
-        {
+        // if braintree, paypal between braintree and paypal smart buttons options are set to yes we will be redirected and see a faliure message
+        if (($request->enable_braintree) && ($request->enable_paypal_in_bt) && ($request->enable_paypal_smart)) {
             return redirect()->back()->withInput()->with('failureMsg', 'The PayPal Smart Buttons cannot be enabled if PayPal is also enabled within Braintree!');
         }
-
-        if( (!$request->enable_braintree) && (!$request->enable_stripe) && (!$request->enable_paypal_smart) )
-        {
+        // if braintree, paypal between braintree and paypal smart buttons options are set to no we will be redirected and see a faliure message
+        if ((!$request->enable_braintree) && (!$request->enable_stripe) && (!$request->enable_paypal_smart)) {
             return redirect()->back()->withInput()->with('failureMsg', 'At least one payment gateway must be enabled!');
         }
 
         $settings = Setting::first();
-        if(is_null($settings))
-        {
+        if (is_null($settings)) {
             abort(403, 'Settings not found!');
         }
 
         $settings->fill($request->all());
         $settings->save();
 
-        if($request->enable_braintree)
-        {
+        if ($request->enable_braintree) {
             PaymentGatewayBladeCreationHelper::createBraintreeBladeFile($request->enable_paypal_in_bt);
         }
 
-        if($request->enable_paypal_smart)
-        {
+        // if paypal smart buttons are enabled we call the createPaypalSmartBladeFile method of the PaymentGatewayBladeCreationHelper class, the method that will dinamically create the js Paypal file
+        if ($request->enable_paypal_smart) {
             PaymentGatewayBladeCreationHelper::createPaypalSmartBladeFile();
         }
 

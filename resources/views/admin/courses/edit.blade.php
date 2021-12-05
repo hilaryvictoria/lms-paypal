@@ -1,7 +1,7 @@
 @extends('layouts.backend.admin-app')
 
 @push('css')
-<link rel="stylesheet" href="{{ asset('public/assets/backend/css/custom-admin.css') }}">
+<link rel="stylesheet" href="{{ asset('/assets/backend/css/custom-admin.css') }}">
 @endpush
 
 @section('content')
@@ -19,9 +19,11 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-
+                    {{-- we pass the course id to the admin.courses.update route --}}
                     <form action="{{route('admin.courses.update', $course->id)}}" method="POST" enctype="multipart/form-data" class="mt-2 mb-2">
+                    {{-- @csrf is a blade directive that will automatically create a hidden token field that will protect the website from crosswebsite forgery attacks --}}
                     @csrf
+                    {{-- blade directive that simulates a put request, the kind of request that has to made when a resource is updated --}}
                     @method('PUT')
 
                         <div class="form-group row option-item">
@@ -31,6 +33,7 @@
 
                             </div>
                             <div class="col-6">
+                                {{-- the old helper will store what I filled in when I failed validation and if not available will populate the field with the current value --}}
                                 <input class="form-control" type="text" name="course_title" id="title-text-input" value="{{old('course_title', $course->title)}}">
                                 <p style="color:red;">{{ $errors->first('course_title') }}</p>
                             </div>

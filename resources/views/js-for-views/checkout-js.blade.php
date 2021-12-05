@@ -1,4 +1,5 @@
 <script>
+    // this variable is passed by the controller to our view
     var chosenCurrency = @json($currencyTextRaw);
 
     $( document ).ready(function() {
@@ -50,6 +51,7 @@
     }
 
     function checkTermsAcceptance()
+    // check if terms and conditions are checked, if not shows error
     {
         if( $("#terms_checkbox").prop("checked") == false )
         {
@@ -86,11 +88,13 @@
     }
 
     function appendPaymentData(completeFormData, gatewayKey)
+    // load the provided data into the form of the checkout
     {
         var inputNames = ["first_name", "last_name", "phone", "street", "apartment",
                           "city", "country", "state", "zip", "total"];
 
         inputNames.forEach(function(item) {
+            // we loop through the input name, we concatenate the gatewayKey and we get the input based on this id, then we insert the value of the input field of the completeFormData which has item id inside the input field
             $("#" + item + gatewayKey).val(completeFormData.get(item));
         });
     }
@@ -159,6 +163,7 @@
     }
 
     function beautifyJson(passedStr)
+    // replaces json characters that we don't want to show to the user and other characters to make the json string more readable
     {
         passedStr = passedStr.replace(/{/g, "");
         passedStr = passedStr.replace(/}/g, "");

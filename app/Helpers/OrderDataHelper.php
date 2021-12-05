@@ -3,8 +3,9 @@
 namespace App\Helpers;
 
 class OrderDataHelper
-{
+{ 
     public static function getOrderData(&$dataArray, &$requestObj, &$authUser, $courseTitle, $transactionId)
+    // & significa pass by reference, passiamo un puntatore a quelle variabili, quindi vengono modificate anche all'esterno della funzione
     {
         $dataArray["user_id"] = $authUser->id;
         $dataArray["customer_name"] = $requestObj->first_name . " " . $requestObj->last_name;

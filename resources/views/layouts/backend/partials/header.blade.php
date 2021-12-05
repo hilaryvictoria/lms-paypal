@@ -12,12 +12,12 @@
   <title>{{ $meta_title ?? '' }} - Payment Integrations</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ asset('public/assets/backend/plugins/fontawesome-free/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/assets/backend/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="{{ asset('public/assets/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/assets/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('public/assets/backend/css/adminlte.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('public/assets/backend/css/custom-admin.css') }}">
+  <link rel="stylesheet" href="{{ asset('/assets/backend/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/assets/backend/css/custom-admin.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   @stack('css')

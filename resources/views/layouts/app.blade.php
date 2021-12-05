@@ -14,9 +14,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('public/assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link href="{{ asset('public/assets/frontend/css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets/frontend/css/styles.css') }}" rel="stylesheet">
     @stack('css')
 </head>
 <body>
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('public/assets/backend/img/logo-black.png') }}" alt="SonicPayments" class="img-fluid">
+                <img src="{{ asset('/assets/backend/img/logo-black.png') }}" alt="SonicPayments" class="img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -89,8 +89,8 @@
         </main>
     </div>
 
-    <script src="{{ asset('public/assets/frontend/js/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ asset('public/assets/frontend/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/bootstrap.bundle.min.js') }}"></script>
     @stack('js')
 </body>
 </html>

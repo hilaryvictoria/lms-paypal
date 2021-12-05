@@ -1,7 +1,7 @@
 @extends('layouts.backend.admin-app')
 
 @push('css')
-<link rel="stylesheet" href="{{ asset('public/assets/backend/css/custom-admin.css') }}">
+<link rel="stylesheet" href="{{ asset('/assets/backend/css/custom-admin.css') }}">
 @endpush
 
 @section('content')
