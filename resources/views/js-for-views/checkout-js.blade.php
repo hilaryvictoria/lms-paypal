@@ -55,7 +55,7 @@
     {
         if( $("#terms_checkbox").prop("checked") == false )
         {
-            showErrorAndScrollUp("The terms and conditions and the privacy policy must be accepted before payment.");
+            showErrorAndScrollUp("Devi accettare i termini e le condizioni prima del pagamento.");
             return false;
         }
 

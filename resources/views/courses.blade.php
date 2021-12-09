@@ -11,8 +11,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title">
-                    <h1>Courses</h1>
+                <div class="section-title pt-5">
+                    <h1>Corsi</h1>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                             <h2><a href="{{ route('courses.show', $course->id) }}">{{$course->title}}</a></h2>
                                  <p>{{$course->description}}</p>
                             <div>
-                                <a href="{{ route('courses.show', $course->id) }}" class="btn btn-primary mt-3">Go to course <i class="fas fa-angle-double-right"></i></a>
+                                <a href="{{ route('courses.show', $course->id) }}" class="btn btn-primary mt-3">Vai al corso <i class="fas fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>

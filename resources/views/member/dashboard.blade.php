@@ -11,8 +11,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title">
-                    <h1>Welcome <em>{{ $authUser->email }}</em></h1>
+                <div class="section-title pt-5">
+                    <h1>Benvenuta <em>{{ $authUser->email }}</em></h1>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
     <div class="row mt-5 mb-5">
         <div class="col-lg-12">
             <div class="section-title">
-                <h2>Your courses</h2>
+                <h2>I tuoi corsi</h2>
                 <hr>
             </div>
             <div class="table-responsive">
@@ -34,10 +34,10 @@
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                        <th scope="col">Course title</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Purchase date</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Titolo del corso</th>
+                        <th scope="col">Prezzo</th>
+                        <th scope="col">Data di acquisto</th>
+                        <th scope="col">Azioni</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,7 +46,7 @@
                                 <td>{{$order->purchased_course_title}}</td>
                                 <td>{{$currency}}{{App\Helpers\CurrencyHelper::getSetPriceFormat($order->price)}}</td>
                                 <td>{{Carbon\Carbon::parse($order->created_at)->format('Y.m.d')}}</td>
-                                <td><a href="{{route('courses.show', $order->purchased_course_id)}}" class="btn btn-info btn-sm">Go to course</a></td>
+                                <td><a href="{{route('courses.show', $order->purchased_course_id)}}" class="btn btn-info btn-sm">Vai al corso</a></td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -58,8 +58,8 @@ a:focus {
     padding-bottom: 100px;
     margin-top: -23px;
     background-color: #ff007f!important;
-    background: -webkit-radial-gradient(top left,circle,#447de6 0%,#06d5e4 100%)!important;
-    background: radial-gradient(circle at top left,#447de6 0%,#06d5e4 100%)!important;
+    background: -webkit-radial-gradient(top left,circle,#fcb69f 0%,#ffecd2 100%)!important;
+    background: radial-gradient(circle at top left,#fcb69f 0%,#ffecd2 100%)!important;
 }
 
 .section-title h1 {
@@ -235,4 +235,13 @@ a:focus {
 /* Member dashboard */
 .section-title h2 {
     font-weight: 600;
+}
+
+/* Added styles */
+.navbar {
+    position: fixed!important;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+
 }

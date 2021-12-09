@@ -11,8 +11,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title">
-                    <h1>Order Confirmation</h1>
+                <div class="section-title pt-5">
+                    <h1>Conferma dell'ordine</h1>
                 </div>
             </div>
         </div>
@@ -29,8 +29,8 @@
                 <i class="far fa-check-circle"></i>
             </div>
             <div class="description mt-5">
-                <h3>Thank you for your purchase!</h3>
-               <p> <a href="{{route('member.dash')}}" class="btn btn-primary mt-5">Go to dashboard</a></p>
+                <h3>Grazie per il tuo acquisto!</h3>
+               <p> <a href="{{route('member.dash')}}" class="btn btn-primary mt-5">Vai ai tuoi corsi</a></p>
             </div>
         </div>
     </div>

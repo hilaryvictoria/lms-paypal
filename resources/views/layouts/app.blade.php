@@ -11,12 +11,18 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=M+PLUS+2&family=Nunito:wght@400;700&family=Raleway:wght@400;800&display=swap" rel="stylesheet"> 
 
     <!-- Styles -->
     <link href="{{ asset('/assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link href="{{ asset('/assets/frontend/css/styles.css') }}" rel="stylesheet">
+   
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/splide.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/custom-style.css') }}">
     @stack('css')
 </head>
 <body>
@@ -42,7 +48,7 @@
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('courses.index') }}">Courses</a>
+                            <a class="nav-link" href="{{ route('courses.index') }}">Corsi</a>
                         </li>
                         <!-- Authentication Links -->
                         @guest
@@ -65,7 +71,7 @@
                                 </li>
                             @elseif(Auth::user()->role_id == 2)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('member.dash') }}">Dashboard</a>
+                                    <a class="nav-link" href="{{ route('member.dash') }}">I miei corsi</a>
                                 </li>
                             @endif
                             <li class="nav-item">
@@ -84,13 +90,33 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
 
     <script src="{{ asset('/assets/frontend/js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('/assets/frontend/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <script src="{{ asset('/assets/frontend/js/splide.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/script.js') }}"></script>
+    <script src="https://kit.fontawesome.com/3a5e05c800.js" crossorigin="anonymous" defer></script>
+    <script type="text/javascript">
+        var image = document.getElementsByClassName('right-parallax');
+        new simpleParallax(image, {
+            orientation: 'right',
+            scale: .5,
+            overflow: true,
+            delay: .6
+        });
+        var image = document.getElementsByClassName('left-parallax');
+        new simpleParallax(image, {
+            orientation: 'left',
+            scale: .5,
+            overflow: true,
+            delay: .6
+        });
+    </script>
     @stack('js')
 </body>
 </html>

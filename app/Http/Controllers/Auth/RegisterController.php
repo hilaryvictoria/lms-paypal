@@ -38,7 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->redirectTo = route('member.dash');
+        $this->redirectTo = route('courses.index');
         $this->middleware('guest');
     }
 

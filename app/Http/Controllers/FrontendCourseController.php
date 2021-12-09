@@ -18,7 +18,7 @@ class FrontendCourseController extends Controller
 
     // show function checks if the authenticated user id is matching with the user_id of a user who bought the course, searching for the user_id and course_id in the table user_courses
     // If no matches are found the flag $userBoughtCourse is set to false and in the frontend buy buttons are shown for the user to buy the course
-    // If there is a row that matches user_id and course_id the flag is set to false You have access to this course! is shown in place of the buttons
+    // If there is a row that matches user_id and course_id the $userBoughtCourse flag is set to false You have access to this course! is shown in place of the buttons
     public function show($courseId)
     {
         // getting the authenticated user
@@ -29,7 +29,7 @@ class FrontendCourseController extends Controller
         if(is_null($course))
         {
             // returns a error view that says that the course has not been found
-            abort(403, 'The course has not been found!');
+            abort(403, 'Impossibile trovare il corso!');
         }
 
         // this is a flag

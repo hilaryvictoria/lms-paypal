@@ -116,8 +116,8 @@ class CheckoutController extends Controller
             'phone' => ['nullable', 'string', 'max:191'],
             'city' => ['required', 'string', 'max:191'],
             // exists:state,state_code state has to exist in the states table and in the state_code column this validation is more important to braintree and stripe
-            'state' => ['required', 'string', 'exists:states,state_code'],
-            'country' => ['required', 'string', 'exists:countries,code'],
+            'state' => ['required', 'string'], //, 'exists:states,state_code'
+            'country' => ['required', 'string'], //, 'exists:countries,code'
             'zip' => ['required', 'string', 'max:150'],
         ]);
         // if validation fails we return errors as a response
@@ -127,15 +127,15 @@ class CheckoutController extends Controller
         // we are getting the course based in the course id that was in our url, if there is no course with that id there is a problem and we return an error
         $courseToBuy = DB::table('courses')->find($courseId);
         if (is_null($courseToBuy)) {
-            return response()->json(['error' => 'The course does not exist.']);
+            return response()->json(['error' => 'Il corso non esiste']);
         }
         // checking the slug of the course that we got from the db and comparing it with the slug we got from the url, if they are different we return a discrepancy error
         if ($courseToBuy->slug != $courseSlug) {
-            return response()->json(['error' => 'Discrepancy in course data.']);
+            return response()->json(['error' => 'I dati del corso non corrispondono']);
         }
         // comparing the price of the course with the total that comes from the url if different we return an error
         if ($courseToBuy->price != $request->total) {
-            return response()->json(['error' => 'Price discrepancy.']);
+            return response()->json(['error' => 'I dati del prezzo non corrispondono']);
         }
         // if validation is successful we return a json response with successful_validation key and success value
         return response()->json(['successful_validation' => 'success']);
@@ -147,13 +147,13 @@ class CheckoutController extends Controller
         // we get the authenticated user (checkout requires the user to be authenticated)
         if (is_null($user)) {
             // if the payment is successful but we can not get the auth user we redirect back with faliure message
-            return redirect()->back()->withInput()->with('failureMsg', 'Payment received but logged-in user not found!');
+            return redirect()->back()->withInput()->with('failureMsg', 'Pagamento ricevuto ma utente loggato non trovato! Contatta assistenza@virginiamaternitycoach.it');
         }
 
         $course = DB::table('courses')->find($request->course);
         // if the payment is successful but we can't find the course inside our db we redirect back with faliure message
         if (is_null($course)) {
-            return redirect()->back()->withInput()->with('failureMsg', 'Payment received but the course has not been found!');
+            return redirect()->back()->withInput()->with('failureMsg', 'Pagamento ricevuto ma corso non trovato! Contatta assistenza@virginiamaternitycoach.it');
         }
         $transactionId = $request->transaction_id;
         // we istantiate an empty array 

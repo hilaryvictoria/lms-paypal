@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title">
+                <div class="section-title pt-5">
                     <h1>{{$course->title}}</h1>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="course-buy-btn">
                         {{-- checkout button --}}
-                        <a href="{{route('checkout', $course->slug)}}" class="btn btn-warning" onclick="showLoadSpinner();"><span class="spinner-border spinner-border-sm" id="spinnerOnBtn" role="status" aria-hidden="true" style="display:none;"></span> Buy Now <i class="fas fa-cart-plus"></i></a>
+                        <a href="{{route('checkout', $course->slug)}}" class="btn btn-warning" onclick="showLoadSpinner();"><span class="spinner-border spinner-border-sm" id="spinnerOnBtn" role="status" aria-hidden="true" style="display:none;"></span> Acquista ora <i class="fas fa-cart-plus"></i></a>
                     </div>
                     {{-- if the user didn't buy the course we show a message --}}
                 @else
