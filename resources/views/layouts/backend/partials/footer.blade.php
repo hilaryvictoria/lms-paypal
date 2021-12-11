@@ -15,7 +15,13 @@
 <script src="{{ asset('/assets/backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/assets/backend/js/adminlte.min.js') }}"></script>
-
+{{-- ckeditor --}}
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 @stack('js')
+<script>
+  $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 </body>
 </html>

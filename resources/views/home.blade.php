@@ -790,7 +790,7 @@
                     </ul>
                 </div>
                 <div class="pricing__card--button">
-                    <a href="{{ URL::to('/courses/3') }}" class="cta-btn">Acquista Fast 28' Post Parto</a>
+                    <a href="{{ URL::to('/courses/3') }}" class="cta-btn">Inizia ora</a>
                 </div>
             </div>
         </div>

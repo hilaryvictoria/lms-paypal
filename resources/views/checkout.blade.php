@@ -357,7 +357,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <p>Your request is being processed. This may take a little time. Thank you for your patience!</p>
+                        <p>La tua richiesta sta per essere eseguita. Questo potrebbe richiedere un po' di tempo. Grazie per la tua pazienza!</p>
                         <div class="d-flex justify-content-center">
                             <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
                             </div>

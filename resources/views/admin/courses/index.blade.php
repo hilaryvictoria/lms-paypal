@@ -42,6 +42,9 @@
                        <th style="width: 10px">#</th>
                        <th>Title</th>
                        <th>Description</th>
+                       <th>Intro</th>
+                       <th>Video</th>
+                       <th>Warning</th>
                        <th>Price</th>
                        <th>Date</th>
                        <th>Actions</th>
@@ -54,6 +57,9 @@
                            <td>{{ $course->title }}</td>
                            {{-- Str::limit limits the description to 20 characters and concatenate the 3 dots --}}
                            <td>{{ Str::limit($course->description, 20, '...') }}</td>
+                           <td>{{ Str::limit($course->intro, 20, '...') }}</td>
+                           <td>{{ Str::limit($course->video, 20, '...') }}</td>
+                           <td>{{ Str::limit($course->warning, 20, '...') }}</td>
                            {{-- Format the price --}}
                            <td>{{ $currency }}{{ App\Helpers\CurrencyHelper::getSetPriceFormat($course->price) }}
                            </td>

@@ -245,3 +245,21 @@ a:focus {
     top: 0;
 
 }
+
+.splide__pagination__page.is-active {
+    background: #e29578!important;
+}
+
+/* Bootstrap accordion */
+.collapse-header {
+    font-size: 1.2rem!important;
+    font-weight: 800!important;
+}
+
+.video-list {
+    list-style-type: none;
+}
+
+.video-list li{
+    margin: 1rem 0;
+}

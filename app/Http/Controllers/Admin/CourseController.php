@@ -39,6 +39,12 @@ class CourseController extends Controller
             'course_title' => ['required', 'string', 'max:1000', 'unique:courses,title'],
             // short_description is not required, must be a string maximum 10000 characters
             'short_description' => ['nullable', 'string', 'max:10000'],
+            // intro is not required, must be a string maximum 10000 characters
+            'intro' => ['nullable', 'string', 'max:10000'],
+            // video is not required, must be a string maximum 255 characters
+            'video' => ['nullable', 'string', 'max:255'],
+            // warning is not required, must be a string maximum 10000 characters
+            'warning' => ['nullable', 'string', 'max:10000'],
             // cover_image is not required, must be a image, accepted formats are jpeg, jpg, png and webp, not bigger than 1999 kb (< 2 Mb)
             'cover_image' => ['nullable', 'image', 'mimes:jpeg,jpg,png,webp', 'max:1999'],
             // course_price is required, a numeric field and can not be lower than 1
@@ -57,6 +63,12 @@ class CourseController extends Controller
         $course->title = $request->course_title;
         // we set a course slug from the course title
         $course->slug = Str::slug($request->course_title);
+        // we set a course intro that will be visible only after buying the course
+        $course->intro = $request->intro;
+        // we set a course video that will be visible only after buying the course
+        $course->video = $request->video;
+         // we set a course warning that will be visible only after buying the course
+         $course->warning = $request->warning;
         // we set a course description
         $course->description = $request->short_description;
         // we set a course price
@@ -109,6 +121,9 @@ class CourseController extends Controller
         $validator = Validator::make($request->all(), [
             'course_title' => ['required', 'string', 'max:1000', 'unique:courses,title,' . $courseId],
             'short_description' => ['nullable', 'string', 'max:10000'],
+            'intro' => ['nullable', 'string', 'max:10000'],
+            'video' => ['nullable', 'string', 'max:255'],
+            'warning' => ['nullable', 'string', 'max:10000'],
             'cover_image' => ['nullable', 'image', 'mimes:jpeg,jpg,png,webp', 'max:1999'],
             'course_price' => ['required', 'numeric', 'min:1'],
         ]);
@@ -122,6 +137,9 @@ class CourseController extends Controller
         $course->title = $request->course_title;
         $course->slug = Str::slug($request->course_title);
         $course->description = $request->short_description;
+        $course->intro = $request->intro;
+        $course->video = $request->video;
+        $course->warning = $request->warning;
         $course->price = $request->course_price;
 
         // same code of store method

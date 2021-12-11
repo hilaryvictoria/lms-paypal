@@ -18,6 +18,9 @@ class CreateCoursesTable extends Migration
             $table->string('title')->unique();
             $table->string('slug');
             $table->string('description')->nullable();
+            $table->string('video')->nullable();
+            $table->string('warning')->nullable();
+            $table->string('intro')->nullable();
             $table->string('image')->nullable();
             $table->decimal('price', 10, 2);
             $table->timestamps();

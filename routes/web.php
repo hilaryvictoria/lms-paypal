@@ -75,6 +75,7 @@ Route::group([
         // Delete a course
         Route::delete('courses/{courseId}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
+        
         // Braintree routes
         Route::get('payments/braintree', [BraintreeController::class, 'index'])->name('braintree');
         Route::put('payments/braintree/update', [BraintreeController::class, 'update'])->name('braintree.update');

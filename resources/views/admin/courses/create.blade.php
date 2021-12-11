@@ -51,6 +51,45 @@
 
                         <div class="form-group row option-item">
                             <div class="col-6">
+                                <p class="option-main-title">Course Intro</p>
+                                <p class="option-description">Intro of the course.</p>
+
+                            </div>
+                            <div class="col-6">
+                            <textarea id="intro-textarea" class="form-control ckeditor" maxlength="225" rows="5" name="intro">{{old('intro')}}</textarea>
+                                <p style="color:red;">{{ $errors->first('intro') }}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="form-group row option-item">
+                            <div class="col-6">
+                                <p class="option-main-title">Course Video</p>
+                                <p class="option-description">Video of the course.</p>
+
+                            </div>
+                            <div class="col-6">
+                            <input class="form-control" maxlength="225" rows="5" name="video" value="{{old('video')}}">
+                                <p style="color:red;">{{ $errors->first('video') }}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="form-group row option-item">
+                            <div class="col-6">
+                                <p class="option-main-title">Course Warning</p>
+                                <p class="option-description">Warning of the course.</p>
+
+                            </div>
+                            <div class="col-6">
+                            <textarea id="warning-textarea" class="form-control" maxlength="225" rows="5" name="warning">{{old('warning')}}</textarea>
+                                <p style="color:red;">{{ $errors->first('warning') }}</p>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="form-group row option-item">
+                            <div class="col-6">
                                 <p class="option-main-title">Course image</p>
                                 <p class="option-description">Upload a cover image of the course.</p>
 

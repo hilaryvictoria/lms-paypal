@@ -28,8 +28,8 @@
             <div class="check d-flex justify-content-center">
                 <i class="far fa-check-circle"></i>
             </div>
-            <div class="description mt-5">
-                <h3>Grazie per il tuo acquisto!</h3>
+            <div class="description mt-5 text-center">
+                <div class="highlight-text">Grazie per il tuo acquisto!</div>
                <p> <a href="{{route('member.dash')}}" class="btn btn-primary mt-5">Vai ai tuoi corsi</a></p>
             </div>
         </div>

@@ -13,6 +13,10 @@ use App\Rules\OnlyAsciiCharacters;
 use App\Models\UserCourse\UserCourse;
 use App\Helpers\OrderDataHelper;
 use App\Models\Order\Order;
+// I import Mail
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderMail;
+
 
 class CheckoutController extends Controller
 {
@@ -141,6 +145,12 @@ class CheckoutController extends Controller
         return response()->json(['successful_validation' => 'success']);
     }
 
+    // Email confirmation
+    public function sendOrderConfirmationMail($order)
+    {
+        Mail::to($order->user_email)->send(new OrderMail($order));
+    }
+
     public function fulfillOrder(Request $request)
     {
         $user = Auth::user();
@@ -176,9 +186,13 @@ class CheckoutController extends Controller
             $newUserCourse->course_id = $course->id;
             $newUserCourse->save();
         }
+        // Sending email confirmation
+        $this->sendOrderConfirmationMail($order);
 
         return redirect()->route('thanks');
     }
+
+
 
     public function showThanks()
     {
