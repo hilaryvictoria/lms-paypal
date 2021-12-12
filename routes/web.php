@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\PaypalController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\OrdersController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FrontendCourseController;
 use App\Http\Controllers\Member\MemberDashboardController;
@@ -50,18 +52,22 @@ Route::get('terms', [PageController::class, 'terms'])->name('terms');
 // Frontend Course routes
 Route::get('courses', [FrontendCourseController::class, 'index'])->name('courses.index');
 Route::get('courses/{courseId}', [FrontendCourseController::class, 'show'])->name('courses.show');
+Route::get('courses/lessons/{lessonId}', [FrontendCourseController::class, 'showLesson'])->name('courses.show_lesson')->middleware('auth');
+
 
 // Routes for Admin group
-Route::group([
-       // This options will be applied to all the routes I will define below into the anonymous function
-    'as'=>'admin.', // all the names of the routes will start with member.
-    'prefix'=>'admin', // all the url of the routes will start with /member.
-    'middleware' => ['auth', 'admin']], // only user who is both logged in and admin can reach the routes defined 
+Route::group(
+    [
+        // This options will be applied to all the routes I will define below into the anonymous function
+        'as' => 'admin.', // all the names of the routes will start with member.
+        'prefix' => 'admin', // all the url of the routes will start with /member.
+        'middleware' => ['auth', 'admin']
+    ], // only user who is both logged in and admin can reach the routes defined 
 
-    function() {
+    function () {
         // Admin dashboard
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        
+
         //Course routes
         Route::get('courses', [CourseController::class, 'index'])->name('courses');
         // Create a new course
@@ -75,7 +81,35 @@ Route::group([
         // Delete a course
         Route::delete('courses/{courseId}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
-        
+        // Category routes
+        Route::get('categories', [CategoryController::class, 'index'])->name('categories');
+        // Create a new category
+        Route::get('categories/create', [CategoryController::class, 'create'])->name('categories.create');
+        // Save a new course (post request from the form on courses.create)
+        Route::post('categories', [CategoryController::class, 'store'])->name('categories.store');
+        // Edit an existing category
+        Route::get('categories/{categoryId}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+        // Update an existing category
+        Route::put('category/{categoryId}', [CategoryController::class, 'update'])->name('categories.update');
+        // Delete a course
+        Route::delete('category/{categoryId}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+        // Lessons routes
+        Route::get('lessons', [LessonController::class, 'index'])->name('lessons');
+        // Create a new category
+        Route::get('lessons/create', [LessonController::class, 'create'])->name('lessons.create');
+        // Get categories from course
+        Route::get('category/ajax/{courseId}', [LessonController::class, 'getCategory']);
+        // Save a new course (post request from the form on courses.create)
+        Route::post('lessons', [LessonController::class, 'store'])->name('lessons.store');
+        // Edit an existing lesson
+        Route::get('lessons/{lessonId}/edit', [LessonController::class, 'edit'])->name('lessons.edit');
+        // Update an existing lesson
+        Route::put('lesson/{categoryId}', [LessonController::class, 'update'])->name('lessons.update');
+        // Delete a course
+        Route::delete('lesson/{categoryId}', [LessonController::class, 'destroy'])->name('lessons.destroy');
+
+
         // Braintree routes
         Route::get('payments/braintree', [BraintreeController::class, 'index'])->name('braintree');
         Route::put('payments/braintree/update', [BraintreeController::class, 'update'])->name('braintree.update');
@@ -99,18 +133,20 @@ Route::group([
         // Orders route
         Route::get('orders', [OrdersController::class, 'index'])->name('orders');
         Route::delete('orders/{orderId}', [OrdersController::class, 'destroy'])->name('orders.destroy');
-
-    });
+    }
+);
 
 
 // Routes for Member group
-Route::group([
-    // This options will be applied to all the routes I will define below into the anonymous function
-    'as'=>'member.', // all the names of the routes will start with member.
-    'prefix'=>'member', // all the routes defined will start with member/
-    'middleware' => ['auth']], // only logged in user can reach the routes defined below
+Route::group(
+    [
+        // This options will be applied to all the routes I will define below into the anonymous function
+        'as' => 'member.', // all the names of the routes will start with member.
+        'prefix' => 'member', // all the routes defined will start with member/
+        'middleware' => ['auth']
+    ], // only logged in user can reach the routes defined below
 
-    function() {
+    function () {
         Route::get('dashboard', [MemberDashboardController::class, 'index'])->name('dash');
     }
 );

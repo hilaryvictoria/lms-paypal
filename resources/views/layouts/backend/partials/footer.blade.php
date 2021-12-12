@@ -1,6 +1,6 @@
   <!-- Main Footer -->
   <footer class="main-footer">
-    Copyright &copy; 2019-{{ date('Y') }} <a targte="_blank" href="https://tmsonic.com/">TM-Sonic</a>.
+    Copyright &copy; 2021-{{ date('Y') }} <a targte="_blank" href="https://uxnovo.it/">Uxnovo</a>.
     All rights reserved.
   </footer>
 </div>
@@ -15,12 +15,13 @@
 <script src="{{ asset('/assets/backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/assets/backend/js/adminlte.min.js') }}"></script>
-{{-- ckeditor --}}
-<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script src="http://cdn.ckeditor.com/4.4.7/standard-all/adapters/jquery.js"></script>
+
+
 @stack('js')
 <script>
   $(document).ready(function () {
-        $('.ckeditor').ckeditor();
+    CKEDITOR.replace( 'description-textarea' );
     });
 </script>
 </body>

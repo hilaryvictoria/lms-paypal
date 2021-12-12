@@ -20,6 +20,7 @@ class CourseController extends Controller
         return view('admin.courses.index', compact('meta_title', 'courses', 'currency'));
     }
 
+    
     public function create() {
         $meta_title = "Create New Courses";
         return view('admin.courses.create', compact('meta_title'));

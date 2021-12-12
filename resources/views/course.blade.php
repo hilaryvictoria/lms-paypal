@@ -1,9 +1,6 @@
 @extends('layouts.app')
-
 @section('title', 'Course')
-
 @push('css')
-
 @endpush
 
 @section('content')
@@ -19,8 +16,7 @@
         </div>
     </section>
 
-    <section id="thanks-content">
-
+    <section>
         <div class="container">
             {{-- if user has not bought the course we show the price with the buy now button pointing to the checkout route --}}
             @if (!$userBoughtCourse)
@@ -61,7 +57,6 @@
 
         </div> <!-- end container -->
     </section>
-
 @endsection
 
 @push('js')

@@ -41,6 +41,30 @@
                   <p>Add new course</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.categories') }}" class="nav-link {{ Request::is('admin/categories') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.categories.create') }}" class="nav-link {{ Request::is('admin/categories/create') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add new category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.lessons') }}" class="nav-link {{ Request::is('admin/lessons') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lessons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.lessons.create') }}" class="nav-link {{ Request::is('admin/categories/create') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add new lessons</p>
+                </a>
+              </li>
             </ul>
           </li>
 
