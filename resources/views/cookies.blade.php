@@ -1,0 +1,1 @@
+<div class="cookies-container" id="gdpr-box"><span>Questo sito sito utilizza cookie, anche di terze parti, per garantirti la migliore esperienza ed analizzare il traffico. Continuando la navigazione consenti il loro utilizzo. <a href="{{ route('privacy') }}">Scopri di più</a></span><a id="cookie-notice-accept" class="btn btn-cookie btn-sm gdpr-button-accept ml-3">Consenti</a>

@@ -149,6 +149,7 @@ class CheckoutController extends Controller
     public function sendOrderConfirmationMail($order)
     {
         Mail::to($order->user_email)->send(new OrderMail($order));
+        Mail::to('info@virginiamaternitycoach.it')->send(new OrderMail($order));
     }
 
     public function fulfillOrder(Request $request)

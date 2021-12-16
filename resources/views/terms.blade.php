@@ -2,7 +2,6 @@
 @section('content')
 <div class="col-md-8 offset-md-2 mt-5">
 <h1 class="pt-5">Termini e Condizioni del Servizio</h1>
-
 <h3>Premessa</h3>
 
 <p>

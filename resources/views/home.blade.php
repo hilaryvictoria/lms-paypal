@@ -5,8 +5,7 @@
         <div class="cover__text">
             <h1>L'allenamento sicuro<br>in gravidanza</h1>
             <h3>Un percorso d'introspezione e connessione con il tuo bambino</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad cum fugiat itaque aut asperiores
-                dignissimos.</p>
+            <p>Virginia Maternity Coach ti prepara all’incontro più bello e importante della tua vita.</p>
             <a href="{{ route('courses.index') }}" class="cta-btn">Scopri i corsi</a>
         </div>
     </section>
@@ -16,11 +15,9 @@
         <div class="row d-flex align-items-center page-container">
 
             <div class="col-md-6">
-                <video width="100%" height="auto" controls>
-                    <source src="{{ asset('assets/frontend/images/video.mp4') }}" type="video/mp4">
-                    <source src="movie.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/657038127"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
             </div>
             <!-- Presentazione Virginia -->
             <div class="col-md-6">
@@ -79,7 +76,7 @@
             </div>
             <div class="col-md-6">
                 <img src="{{ asset('assets/frontend/images/pavimento-pelvico.png') }}" alt="Pavimento Pelvico"
-                    class="img-fluid p-3 left-parallax">
+                    class="img-fluid p-5 left-parallax">
             </div>
         </div>
     </section>
@@ -88,7 +85,7 @@
     <section class="pelvico blue-gradient-bg py-5">
         <div class="row d-flex align-items-center page-container">
             <div class="col-md-6">
-                <img src="{{ asset('assets/frontend/images/diastasi-retto.png') }}" alt="diastasi retto"
+                <img src="{{ asset('assets/frontend/images/diastasi-virginia.png') }}" alt="diastasi retto"
                     class="img-fluid p-5 right-parallax">
             </div>
             <div class="col-md-6">
@@ -100,9 +97,16 @@
                     <p>Per me si tratta di un argomento particolarmente importante e che mi tocca da vicino. Io stessa
                         infatti ne soffro e per questo ho deciso di fare informazione per aiutare più donne possibile a
                         prevenirlo.</p>
-                    <p>Allenarsi è importante. E lo si può fare anche in gravidanza. Ma come molte altre cose, anche
-                        l'attività fisica va adattata ad un momento così delicato.</p>
-                    {{-- <a href="courses.html" class="cta-btn">Scopri di più</a> --}}
+                    <p>Io per prima non mi accettavo, mi sentivo in un corpo che non era più il mio, evitavo di mettermi in costume per paura del giudizio delle persone ma soprattutto avevo paura di non piacere più a mio marito.</p>
+                    <p>Per questo ho creato un protocollo di allenamento mirato, testato su di me!</p>
+                    <p>Non importa che tu abbia partorito da due mesi o da dieci anni. Non è mai troppo tardi per iniziare a prenderti cura di te stessa e di tornare a sorridere proprio come è successo a me!</p>
+                    {{-- <p>Allenarsi è importante. E lo si può fare anche in gravidanza. Ma come molte altre cose, anche
+                        l'attività fisica va adattata ad un momento così delicato.</p> --}}
+                        <p><strong>Posso tornare ad allenarmi nel posto parto anche in presenza di diastasi?</strong></p>
+                        <p>La risposta è si, ma con delle accortezze e soprattutto con un percorso specifico e sicuro perche lavorare in sicurezza è fondamentale per non creare più danni che altro. 
+                            Ho messo a punto io stessa un percorso appositamente per tutte le mamme nel post parto che hanno voglia di rimettersi in forma ma non sanno da dove partire e soprattutto a chi affidarsi.  Che tu abbia una diastasi (e poi ti mostrerò come autodiagnosticarla) oppure no, ti meriti di recuperare la tua femminilità, di riscoprire il tuo corpo, di ascoltarti, di connetterti, per il tuo benessere psico-fisico, dove e quando vuoi.</p>
+                        <p></p>
+                    <a href="{{ URL::to('/courses/3') }}" class="cta-btn" style="margin:0 auto;max-width:350px;display:block">Scopri Fast 28' Post Parto</a>
                 </div>
             </div>
         </div>
@@ -117,7 +121,7 @@
                     <div class="glass-container">
                         <h2 class="text-center">Perche ho voluto creare Virginia Maternity Coach?</h2>
                         <div class="py-2">
-                            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                            {{-- <h3>Lorem ipsum dolor sit amet consectetur.</h3> --}}
                             <p>Ho deciso di creare Virginia Maternity Coach per permettere a tutte le donne - ed in
                                 particolar modo
                                 alle mamme - di allenarsi in libertà e sicurezza.</p>
@@ -162,7 +166,7 @@
                             <h3>Cosa mi offre Virginia Maternity Coach?</h3>
                             <p>Quello che troverai in Virginia Maternity Coach è un percorso strutturato che ti accompagna
                                 durante
-                                l'intera gravidanza, dal momento in cui scoperti di essere incinta, al parto, fino al
+                                l'intera gravidanza, dal momento in cui scopri di essere incinta, al parto, fino al
                                 post parto.</p>
                             <p>Il mio obiettivo è prepararti fisicamente e psicologicamente in maniera serena e
                                 consapevole all’incontro più bello e importante della tua vita.</p>
@@ -307,6 +311,7 @@
     <section class="corso py-5" id="corsi">
         <div class="row d-flex align-items-center page-container">
             <div class="col-md-8">
+
                 <h2>Gravidanza Fit</h2>
                 <h3>Il tuo percorso di allenamento strutturato e sicuro che ti accompagna per tutta la gravidanza fino
                     al post parto.</h3>
@@ -336,6 +341,7 @@
                     <li>velocizzazione del recupero post parto</li>
                 </ul>
                 </p>
+
                 <a href="{{ URL::to('/courses/1') }}" class="cta-btn">Inizia qui</a>
             </div>
             <div class="col-md-4">
@@ -354,14 +360,12 @@
             </div>
             <div class="col-md-8">
                 <h2>Parto Consapevole</h2>
-                <h3>corso Parto cosapevole</h3>
-                <p class="pt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad cum fugiat
-                    itaque aut asperiores dignissimos.</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et suscipit unde accusamus odio expedita
-                    explicabo distinctio pariatur soluta ea a nobis totam iure laboriosam recusandae excepturi minima
-                    autem eveniet, eum nulla quisquam, esse sed. Hic assumenda ipsum quidem ducimus similique?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ducimus labore perferendis, cumque
-                    vitae nam ratione tempora laborum incidunt dicta!</p>
+                <h3>Il momento di “lasciare andare” di “sentire“ il tuo pavimento pelvico, di creare spazio, di accogliere e di prepararsi alla diade</h3>
+                <p>E’ arrivato il momento di “lasciare andare” di “sentire“ il tuo pavimento pelvico, di creare spazio, di accogliere e di prepararsi alla diade.</p>
+                <h4>Cosa troverai all'interno del corso?</h4>
+                <p class="pt-3">Oltre 20 video dedicati alla mamma nell’ottavo e nono mese, gli ultimi due mesi di attesa prima di tenere il suo piccolo tra le braccia.</p>
+                
+                <p>Troverai lezioni dedicate al respiro consapevole, lezioni flow di yoga per il parto, illustrazioni di posizioni utili che potrebbero esserti utili durante il travaglio e parto e tanti contenuti extra preparati appositamente dall’ostetrica Federica Sari.</p>
                 <a href="{{ URL::to('/courses/2') }}" class="cta-btn">Inizia qui</a>
             </div>
 
@@ -420,257 +424,7 @@
     </section>
     <!-- /End Section corso #3 about -->
     {{-- Reviews --}}
-    <section class="reviews py-5 bg-white">
-        <div class="row text-center">
-            <div class="col-md-8 offset-md-2">
-                <p>Cosa pensano le mamme che si sono già affidate a me?</p>
-                <h2>
-                    Recensioni <span class="h1-mod">di</span> <span class="h1-mod">Virginia Maternity
-                        Coach</span>
-                </h2>
-            </div>
-        </div>
-        <div class="row py-2">
-            <div class="col-md-12 splide">
-                <div class="container-1 splide__track">
-                    <div class="row reviewcontainer splide__list">
-                        <div class="splide__slide">
-                            <div class="cardtot p-1">
-                                <div class="cardreview">
-                                    Sono l'atleta amatoriale e durante il periodo di gravidanza cercavo l'attività fisica
-                                    che mi consentiva di mantenermi in forma e prepararmi per il parto. Ho trovato Virginia
-                                    e mi sono iscritta al suo corso di pilates per la gravidanza. Anche se a me non
-                                    piacciono le attività lente, questo corso è stato un grande aiuto sia dal punto di vista
-                                    fisico che della respirazione che è fondamentale durante il parto. Sono rimasta con
-                                    Virgina per 4 mesi e ho fatto attività fino alla data del parto. Sono rimasta contenta,
-                                    lei è una grande professionista, oltre a essere una persona di esperienza, avendo avuto
-                                    due bimbe.
-                                </div>
-                                <div class="cardauthor mt-4">
-                                    <div class="cardauthor__img m-2">
-                                        <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                            alt="Cliente Virgina Maternity Coach Avatar"
-                                            class="cardauthor__img--img rounded-circle">
-                                    </div>
-                                    <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                        {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pt-sm-medium splide__slide">
-                            <div class="cardtot p-1">
-                                <div class="cardreview">
-                                    Ho seguito il corso di pilates in gravidanza di virginia dal 5 mese di gravidanza fino a
-                                    5 giorni prima del parto e posso dire che è un alleato indispensabile di ogni
-                                    gravidanza. Virginia è estremamente preparata e attenta, simpatica e disponibile al
-                                    confronto. Grazie a lei mi sono sentita una gravida in superforma...e lo ero a detta di
-                                    tutti!
-                                </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pt-sm-medium splide__slide">
-                                <div class="cardtot p-1">
-                                    <div class="cardreview">
-                                        Ciao Virgi, bene grazie. Scusa mi sono inceppata con gli annunci! Martino è nato il
-                                        6/10 un giorno prima dell’induzione. Menomale! Lui sta benissimo, il parto è stato
-                                        rapido, 0 punti, sono stata benissimo da subito. Che gioia! Ora ci stiamo
-                                        assestando, con due bimbi non riesco a fare niente, spero di trovare presto nuove
-                                        buone abitudini per stare bene tutti insieme!
-                                    </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pt-sm-medium splide__slide">
-                                <div class="cardtot p-1">
-                                    <div class="cardreview">
-                                        Ciao Virginia! È andata molto bene grazie. Mi piacerebbe continuare a farlo ogni
-                                        venerdì se per te va bene.
-                                    </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pt-sm-medium splide__slide">
-                                <div class="cardtot p-1">
-                                    <div class="cardreview">
-                                        Bellissimo Virginia, grazie! Partecipo di sicuro!
-                                    </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pt-sm-medium splide__slide">
-                                <div class="cardtot p-1">
-                                    <div class="cardreview">
-                                        Ciao Virgi!!
-                                        Giulia è nata ieri!! 😊😊
-                                        Parto un po’ lungo con le induzioni ma è andato tutto bene!
-                                        Ti ho pensata con i nostri esercizi e rilassamenti durante il travaglio! Credo di
-                                        avere avuto e di avere molto meno male grazie a tutto il nostro lavoro!!
-                                        Grazie!!!!
-                                        Ci vediamo a pilates per mamme! Ho perso tantissimo sangue e sono anemica: ci
-                                        sentiamo poi per capire quando iniziare!
-                                        Un abbraccio grande
-                                    </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- slide --}}
-                            <div class="pt-sm-medium splide__slide">
-                                <div class="cardtot p-1">
-                                    <div class="cardreview">
-                                        Ciao! Ooohhh benissimo! Non sai quanto ne avevo bisogno! Sono alcune settimane che sento sempre un doloretto dalla lombare in giù! Il mio chiropratico mi manipola maaa...solo lui non basta (come dice sempre lui stesso!) . Un po' di pilates è sicuramente utile!
-                                    </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- /slide --}}
-                             {{-- slide --}}
-                             <div class="pt-sm-medium splide__slide">
-                                <div class="cardtot p-1">
-                                    <div class="cardreview">
-                                        Ciao... Sto bene grazie! Anzi... La lezione di lunedì è stata la. Manna dal cielo... Mi ha sbloccato la schiena
-                                    </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- /slide --}}
-                             {{-- slide --}}
-                             <div class="pt-sm-medium splide__slide">
-                                <div class="cardtot p-1">
-                                    <div class="cardreview">
-                                        Vorrei iscrivermi al corso di pilates.. è stato molto bello ☺️ come funziona per l’iscrizione?
-                                    </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- /slide --}}
-                             {{-- slide --}}
-                             <div class="pt-sm-medium splide__slide">
-                                <div class="cardtot p-1">
-                                    <div class="cardreview">
-                                        Ciao ☺️ io sarei interessata per le lezioni post parto! La prova mi è piaciuta tantissimo! 
-                                    </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- /slide --}}
-                             {{-- slide --}}
-                             <div class="pt-sm-medium splide__slide">
-                                <div class="cardtot p-1">
-                                    <div class="cardreview">
-                                       Ciao!!!! Si sì è andata benissimo!! Sono movimenti che non faccio mai, devo solo prendere un po’ il giro per abituarmi però sto proprio bene! 
-                                    </div>
-                                    <div class="cardauthor mt-4">
-                                        <div class="cardauthor__img m-2">
-                                            <img src="{{ asset('assets/frontend/images/avatar.png') }}" loading="lazy"
-                                                alt="Cliente Virgina Maternity Coach Avatar"
-                                                class="cardauthor__img--img rounded-circle">
-                                        </div>
-                                        <div class="cardauthor__name">Cliente Maternity Coaching<br>
-                                            {{-- <a href="https://www.sms-sangilliese.org" target="_blank" rel="noopener">Sms
-                                            Sangilliese</a> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- /slide --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
+ @include('layouts.includes.reviews')
     {{-- /End reviews --}}
     <!-- Section price -->
     <section class="pink-gradient-bg py-5" id="inizia">
@@ -681,18 +435,24 @@
                 </div>
                 <span class="badge bg-dark">Allenamento preparto</span>
                 <div class="pricing__card--price">
-                    89 <sup>€</sup>
+                    <strike><small>189</small></strike> 89 <sup>€</sup>
                 </div>
                 <div class="pricing__card--features">
                     <ul>
                         <li>Allenamenti specifici dal quarto mese al settimo mese</li>
-                        <li>Oltre  50 video tra cui:</li>
+                        <li>Oltre 50 video tra cui:</li>
                     </ul>
                 </div>
 
                 <div class="pricing__card--more">
                     <ul>
-                          <li>Imparare a consapevolizzare il respiro <strong>&middot;</strong> <strong>Morning routine giornaliera dettagliata</strong> <strong>&middot;</strong> Lezioni in circuiti e lezioni flow guidate di tonificazione <strong>&middot;</strong> Pilates <strong>&middot;</strong> Pilates barre <strong>&middot;</strong> Piccoli attrezzi <strong>&middot;</strong> Mobilità <strong>&middot;</strong> Stretching <strong>&middot;</strong> Automassaggio</li>
+                        <li>Imparare a consapevolizzare il respiro <strong>&middot;</strong> <strong>Morning
+                                routine giornaliera dettagliata</strong> <strong>&middot;</strong> Lezioni in
+                            circuiti e lezioni flow guidate di tonificazione <strong>&middot;</strong> Pilates
+                            <strong>&middot;</strong> Pilates barre <strong>&middot;</strong> Piccoli attrezzi
+                            <strong>&middot;</strong> Mobilità <strong>&middot;</strong> Stretching
+                            <strong>&middot;</strong> Automassaggio
+                        </li>
                     </ul>
                 </div>
 
@@ -703,13 +463,17 @@
                 </div>
                 <div class="pricing__card--more">
                     <ul>
-                          <li>Cervicalgia <strong>&middot;</strong> <strong>Pubalgia</strong> <strong>&middot;</strong> Lombalgia <strong>&middot;</strong> Polsi Dolenti <strong>&middot;</strong> Circolazione <strong>&middot;</strong> Meditazione</li>
+                        <li>Cervicalgia <strong>&middot;</strong> <strong>Pubalgia</strong>
+                            <strong>&middot;</strong> Lombalgia <strong>&middot;</strong> Polsi Dolenti
+                            <strong>&middot;</strong> Circolazione <strong>&middot;</strong> Meditazione
+                        </li>
                     </ul>
                 </div>
 
                 <div class="pricing__card--features mb-4">
                     <ul>
-                        <li>Contenuti extra della <strong>biologa nutrizionista</strong> Chiara Savarino e dell’<strong>ostetrica</strong> Federica Sari</li>
+                        <li>Contenuti extra della <strong>biologa nutrizionista</strong> Chiara Savarino e
+                            dell’<strong>ostetrica</strong> Federica Sari</li>
                         <li><strong>Assistenza tramite mail</strong></li>
                         <li>Aggiornamento costante del portale</li>
                     </ul>
@@ -724,18 +488,25 @@
                 </div>
                 <span class="badge bg-warning"><i class="fas fa-trophy"></i> Il più richiesto</span>
                 <div class="pricing__card--price">
-                    89 <sup>€</sup>
+                    <strike><small>189</small></strike> 89 <sup>€</sup>
                 </div>
                 <div class="pricing__card--features">
                     <ul>
-                        <li><strong>Oltre 20 video</strong> dedicati alla mamma nell’ottavo e nono mese, gli ultimi due mesi di attesa prima di tenere il suo piccolo tra le braccia. E’ arrivato il momento di “lasciare andare” di “sentire“ il tuo pavimento pelvico, di creare spazio , di accogliere e di prepararsi alla diade.</li>
+                        <li><strong>Oltre 20 video</strong> dedicati alla mamma nell’ottavo e nono mese, gli
+                            ultimi due mesi di attesa prima di tenere il suo piccolo tra le braccia. E’ arrivato
+                            il momento di “lasciare andare” di “sentire“ il tuo pavimento pelvico, di creare
+                            spazio , di accogliere e di prepararsi alla diade.</li>
                         <li>Troverai lezioni dedicate:</li>
                     </ul>
                 </div>
 
                 <div class="pricing__card--more">
                     <ul>
-                          <li>al respiro consapevole <strong>&middot;</strong> lezioni flow di yoga per il parto <strong>&middot;</strong> <strong>Morning routine giornaliera dettagliata</strong> <strong>&middot;</strong> illustrazioni di posizioni utili che potrebbero esserti utili durante il travaglio e parto</li>
+                        <li>al respiro consapevole <strong>&middot;</strong> lezioni flow di yoga per il parto
+                            <strong>&middot;</strong> <strong>Morning routine giornaliera dettagliata</strong>
+                            <strong>&middot;</strong> illustrazioni di posizioni utili che potrebbero esserti
+                            utili durante il travaglio e parto
+                        </li>
                     </ul>
                 </div>
 
@@ -746,13 +517,20 @@
                 </div>
                 <div class="pricing__card--more">
                     <ul>
-                          <li>Cervicalgia <strong>&middot;</strong> <strong>Pubalgia</strong> <strong>&middot;</strong> Lombalgia <strong>&middot;</strong> Polsi Dolenti <strong>&middot;</strong> Circolazione <strong>&middot;</strong> Automassaggio <strong>&middot;</strong> Pavimento pelvico come rilassarlo <strong>&middot;</strong> Meditazione </li>
+                        <li>Cervicalgia <strong>&middot;</strong> <strong>Pubalgia</strong>
+                            <strong>&middot;</strong> Lombalgia <strong>&middot;</strong> Polsi Dolenti
+                            <strong>&middot;</strong> Circolazione <strong>&middot;</strong> Automassaggio
+                            <strong>&middot;</strong> Pavimento pelvico come rilassarlo
+                            <strong>&middot;</strong> Meditazione
+                        </li>
                     </ul>
                 </div>
 
                 <div class="pricing__card--features mb-4">
                     <ul>
-                        <li>Contenuti extra e linee guida sull'alimentazione della <strong>biologa nutrizionista</strong> Chiara Savarino e dell’<strong>ostetrica</strong> Federica Sari</li>
+                        <li>Contenuti extra e linee guida sull'alimentazione della <strong>biologa
+                                nutrizionista</strong> Chiara Savarino e dell’<strong>ostetrica</strong>
+                            Federica Sari</li>
                         <li><strong>Assistenza tramite mail</strong></li>
                         <li>Aggiornamento costante del portale</li>
                     </ul>
@@ -767,24 +545,31 @@
                 </div>
                 <span class="badge bg-dark">Allenamento postparto</span>
                 <div class="pricing__card--price">
-                    89 <sup>€</sup>
+                    <strike><small>189</small></strike> 89 <sup>€</sup>
                 </div>
                 <div class="pricing__card--features">
                     <ul>
-                        <li><strong>8 video della durata di 28 minuti circa ciascuno.</strong> Ideali per noi mamme che abbiamo poco tempo ma che non vogliamo rinunciare al nostro benessere e alla nostra forma fisica. Un video a settimana da ripetere almeno 4 volte nell’arco della settimana, per un totale di 8 settimane. </li>
+                        <li><strong>8 video della durata di 28 minuti circa ciascuno.</strong> Ideali per noi
+                            mamme che abbiamo poco tempo ma che non vogliamo rinunciare al nostro benessere e
+                            alla nostra forma fisica. Un video a settimana da ripetere almeno 4 volte nell’arco
+                            della settimana, per un totale di 8 settimane. </li>
                         <li>Percorso di 8 settimane:</li>
                     </ul>
                 </div>
 
                 <div class="pricing__card--more">
                     <ul>
-                          <li>esercizi mirati e specifici <strong>&middot;</strong> speciale diastasi  <strong>&middot;</strong> esercizi focus sul rinforzo del pavimento pelvico <strong>&middot;</strong> video allattamento e postura</li>
+                        <li>esercizi mirati e specifici <strong>&middot;</strong> speciale diastasi
+                            <strong>&middot;</strong> esercizi focus sul rinforzo del pavimento pelvico
+                            <strong>&middot;</strong> video allattamento e postura
+                        </li>
                     </ul>
                 </div>
 
                 <div class="pricing__card--features mb-4">
                     <ul>
-                        <li>Contenuti extra e linee guida sull'alimentazione della <strong>biologa nutrizionista</strong> Chiara Savarino</li>
+                        <li>Contenuti extra e linee guida sull'alimentazione della <strong>biologa
+                                nutrizionista</strong> Chiara Savarino</li>
                         <li><strong>Assistenza tramite mail</strong></li>
                         <li>Aggiornamento costante del portale</li>
                     </ul>
@@ -797,65 +582,7 @@
     </section>
     <!-- /End section price -->
     <!-- Feature Section -->
-    <section class="py-5 long-text-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 mb-4 text-center">
-                    <h2>
-                        I pro dell’allenamento online
-                    </h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-12 caratteristiche text-center">
-                    <i class="fas fa-check"></i>
-                    <div class="caratteristiche-title">Flessibilità</div>
-                    <p>
-                        Ti alleni dove e quando vuoi.
-                    </p>
-                </div>
-                <div class="col-md-4 col-sm-12 caratteristiche text-center">
-                    <i class="fas fa-laptop-house"></i>
-                    <div class="caratteristiche-title">Accesso continuo</div>
-                    <p>
-                        Accedi quando vuoi, 7 giorni su 7, 24 ore su 24.
-                    </p>
-                </div>
-                <div class="col-md-4 col-sm-12 caratteristiche text-center">
-                    <i class="fas fa-wallet"></i>
-                    <div class="caratteristiche-title">Risparmio</div>
-                    <p>
-                        La tua maternity coach personale ad un prezzo piccolo piccolo.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-12 caratteristiche text-center">
-                    <i class="fas fa-comments"></i>
-                    <div class="caratteristiche-title">Assistenza</div>
-                    <p>
-                        Sempre pronta a rispondere alle tue domande.
-                    </p>
-                </div>
-                <div class="col-md-4 col-sm-12 caratteristiche text-center">
-                    <i class="fas fa-lock"></i>
-                    <div class="caratteristiche-title">Sicurezza</div>
-                    <p>
-                        Ogni programma è elaborato da me, mamma e Personal Fitness Coach certificata, specializzata in
-                        allenamento in gravidanza e approvato da un'ostetrica e una nutrizionista.
-                    </p>
-                </div>
-                <div class="col-md-4 col-sm-12 caratteristiche text-center">
-                    <i class="fas fa-chart-line"></i>
-                    <div class="caratteristiche-title">Risultati </div>
-                    <p>
-                        Perché ciò che conta davvero è che funzioni!
-                    </p>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+@include('layouts.includes.features')
     <!-- /End Feature Section -->
     <!-- Faq -->
     <section class="pink-gradient-bg">

@@ -86,7 +86,7 @@
 
                             </div>
                             <div class="col-6">
-                            <textarea id="warning-textarea" class="form-control" maxlength="225" rows="5" name="warning">{{old('warning', $course->warning)}}</textarea>
+                            <textarea id="warning-textarea" class="form-control" maxlength="10000" rows="5" name="warning">{{old('warning', $course->warning)}}</textarea>
                                 <p style="color:red;">{{ $errors->first('warning') }}</p>
                             </div>
                         </div>

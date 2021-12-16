@@ -50,7 +50,7 @@
             @if($lesson->category_id == $category->id )
             <li><a href="lessons/{{ $lesson->id }}" target="_blank">
               @if(is_null($lesson->video))
-                <i class="fas fa-file-pdf"></i> Scheda:
+                <i class="fas fa-file-pdf"></i> Articolo:
               @else
                 <i class="fas fa-video"></i> Video:
               @endif

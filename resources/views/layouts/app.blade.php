@@ -30,7 +30,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('/assets/backend/img/logo-black.png') }}" alt="SonicPayments" class="img-fluid">
+                <img src="{{ asset('/assets/backend/img/logo-black.png') }}" alt="Virgina Maternity Coach" class="img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -94,12 +94,15 @@
             @yield('content')
         </main>
     </div>
-
+    @include('layouts.includes.footer')
+    @include('cookies')
     <script src="{{ asset('/assets/frontend/js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('/assets/frontend/js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
     <script src="{{ asset('/assets/frontend/js/splide.min.js') }}"></script>
     <script src="{{ asset('/assets/frontend/js/script.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/jquery.cookie.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/cookiebar.js') }}"></script>
     <script src="https://kit.fontawesome.com/3a5e05c800.js" crossorigin="anonymous" defer></script>
     <script type="text/javascript">
         var image = document.getElementsByClassName('right-parallax');

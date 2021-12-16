@@ -24,6 +24,8 @@
 
             <div class="container">
                 {{-- if user has not bought the course we show the price with the buy now button pointing to the checkout route --}}
+                <div class="text-right"><a class="btn btn-primary go-back" href="{{ url('courses/'.$lesson->course_id) }}"><i class="fas fa-arrow-left"></i> Torna indietro</a>
+                </div>
                 <div class="row">
                     @if (!is_null($lesson->video))
                         <div class="col-md-8 offset-md-2">
@@ -35,13 +37,13 @@
                             <p>Sembrerebbe che tu non abbia un PDF reader per visualizzare il file <a href="assets/gravidanza-fit/pdf/valigia-parto.pdf">clicca qui per scaricarlo!</a></p>
                         </object>
                         @else
-                            <img src="{{ asset('/uploads/course_files/' . $lesson->file) }}" alt="" class="img-fluid">
+                            <img src="{{ asset('/uploads/course_files/' . $lesson->file) }}" alt="" class="img-fluid" style="max-width:550px;display:block;margin:0 auto;">
                         @endif
 
                     @endif
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 text-center">
                         <p>{!! $lesson->description !!}</p>
 
                     </div>
