@@ -14,13 +14,14 @@
     <section class="video py-5 pink-gradient-bg">
         <div class="row d-flex align-items-center page-container">
 
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/657038127"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
+                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/657038127" frameborder="0"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
             </div>
             <!-- Presentazione Virginia -->
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="glass-container">
                     <h2>Mi Presento</h2>
                     <h3>Virginia Flaborea, fondatrice di Virginia Maternity Coach</h3>
@@ -47,7 +48,7 @@
     <!-- Section pavimento pelvico about -->
     <section class="pelvico py-5">
         <div class="row d-flex align-items-center page-container">
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="glass-container">
                     <h2>Pavimento Pelvico</h2>
                     <h3>Il pavimento pelvico, questo sconosciuto</h3>
@@ -74,7 +75,7 @@
                     {{-- <a href="#corsi" class="cta-btn">Inizia qui</a> --}}
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <img src="{{ asset('assets/frontend/images/pavimento-pelvico.png') }}" alt="Pavimento Pelvico"
                     class="img-fluid p-5 left-parallax">
             </div>
@@ -84,11 +85,11 @@
     <!-- Section diastasi retto about -->
     <section class="pelvico blue-gradient-bg py-5">
         <div class="row d-flex align-items-center page-container">
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <img src="{{ asset('assets/frontend/images/diastasi-virginia.png') }}" alt="diastasi retto"
                     class="img-fluid p-5 right-parallax">
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <div class="glass-container">
                     <h2>Cos’è la diastasi addominale?</h2>
                     <h3>La diastasi dei muscoli retti dell'addome</h3>
@@ -97,16 +98,25 @@
                     <p>Per me si tratta di un argomento particolarmente importante e che mi tocca da vicino. Io stessa
                         infatti ne soffro e per questo ho deciso di fare informazione per aiutare più donne possibile a
                         prevenirlo.</p>
-                    <p>Io per prima non mi accettavo, mi sentivo in un corpo che non era più il mio, evitavo di mettermi in costume per paura del giudizio delle persone ma soprattutto avevo paura di non piacere più a mio marito.</p>
+                    <p>Io per prima non mi accettavo, mi sentivo in un corpo che non era più il mio, evitavo di mettermi in
+                        costume per paura del giudizio delle persone ma soprattutto avevo paura di non piacere più a mio
+                        marito.</p>
                     <p>Per questo ho creato un protocollo di allenamento mirato, testato su di me!</p>
-                    <p>Non importa che tu abbia partorito da due mesi o da dieci anni. Non è mai troppo tardi per iniziare a prenderti cura di te stessa e di tornare a sorridere proprio come è successo a me!</p>
+                    <p>Non importa che tu abbia partorito da due mesi o da dieci anni. Non è mai troppo tardi per iniziare a
+                        prenderti cura di te stessa e di tornare a sorridere proprio come è successo a me!</p>
                     {{-- <p>Allenarsi è importante. E lo si può fare anche in gravidanza. Ma come molte altre cose, anche
                         l'attività fisica va adattata ad un momento così delicato.</p> --}}
-                        <p><strong>Posso tornare ad allenarmi nel posto parto anche in presenza di diastasi?</strong></p>
-                        <p>La risposta è si, ma con delle accortezze e soprattutto con un percorso specifico e sicuro perche lavorare in sicurezza è fondamentale per non creare più danni che altro. 
-                            Ho messo a punto io stessa un percorso appositamente per tutte le mamme nel post parto che hanno voglia di rimettersi in forma ma non sanno da dove partire e soprattutto a chi affidarsi.  Che tu abbia una diastasi (e poi ti mostrerò come autodiagnosticarla) oppure no, ti meriti di recuperare la tua femminilità, di riscoprire il tuo corpo, di ascoltarti, di connetterti, per il tuo benessere psico-fisico, dove e quando vuoi.</p>
-                        <p></p>
-                    <a href="{{ URL::to('/courses/3') }}" class="cta-btn" style="margin:0 auto;max-width:350px;display:block">Scopri Fast 28' Post Parto</a>
+                    <p><strong>Posso tornare ad allenarmi nel posto parto anche in presenza di diastasi?</strong></p>
+                    <p>La risposta è si, ma con delle accortezze e soprattutto con un percorso specifico e sicuro perche
+                        lavorare in sicurezza è fondamentale per non creare più danni che altro.
+                        Ho messo a punto io stessa un percorso appositamente per tutte le mamme nel post parto che hanno
+                        voglia di rimettersi in forma ma non sanno da dove partire e soprattutto a chi affidarsi. Che tu
+                        abbia una diastasi (e poi ti mostrerò come autodiagnosticarla) oppure no, ti meriti di recuperare la
+                        tua femminilità, di riscoprire il tuo corpo, di ascoltarti, di connetterti, per il tuo benessere
+                        psico-fisico, dove e quando vuoi.</p>
+                    <p></p>
+                    <a href="{{ URL::to('/courses/3') }}" class="cta-btn"
+                        style="margin:0 auto;max-width:350px;display:block">Scopri Fast 28' Post Parto</a>
                 </div>
             </div>
         </div>
@@ -229,7 +239,7 @@
                     </div>
                 </div>
                 <div class="row pt-5 mx-auto-sm card-group">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="col-lg-4 col-md-12 d-flex align-items-stretch">
                         <div class="card">
                             <img src="{{ asset('assets/frontend/images/virginia.jpg') }}" class="img-fluid" alt="">
                             <div class="member-content p-4">
@@ -247,7 +257,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch m-top-sm">
+                    <div class="col-lg-4 col-md-12 d-flex align-items-stretch m-top-sm">
                         <div class="card">
                             <img src="{{ asset('assets/frontend/images/federica.jpg') }}" class="img-fluid" alt="">
                             <div class="member-content p-4">
@@ -270,7 +280,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch m-top-sm">
+                    <div class="col-lg-4 col-md-12 d-flex align-items-stretch m-top-sm">
                         <div class="card">
                             <img src="{{ asset('assets/frontend/images/chiara.jpg') }}" class="img-fluid" alt="">
                             <div class="member-content p-4">
@@ -309,8 +319,8 @@
     <!-- /end cta section -->
     <!-- Section corso #1 about -->
     <section class="corso py-5" id="corsi">
-        <div class="row d-flex align-items-center page-container">
-            <div class="col-md-8">
+        <div class="row d-flex align-items-center page-container column-reverse-md">
+            <div class="col-lg-8">
 
                 <h2>Gravidanza Fit</h2>
                 <h3>Il tuo percorso di allenamento strutturato e sicuro che ti accompagna per tutta la gravidanza fino
@@ -344,9 +354,9 @@
 
                 <a href="{{ URL::to('/courses/1') }}" class="cta-btn">Inizia qui</a>
             </div>
-            <div class="col-md-4">
-                <img src="{{ asset('assets/frontend/images/corso.png') }}" alt="Pavimento Pelvico"
-                    class="img-fluid p-5 left-parallax">
+            <div class="col-lg-4">
+                <img src="{{ asset('assets/frontend/images/grav_fit_mockup.png') }}" alt="Gravidanza Fit"
+                    class="img-fluid p-5 left-parallax image-max-width">
             </div>
         </div>
     </section>
@@ -354,18 +364,23 @@
     <!-- Section corso #2 about -->
     <section class="corso py-5 white-bg">
         <div class="row d-flex align-items-center page-container">
-            <div class="col-md-4">
-                <img src="{{ asset('assets/frontend/images/corso.png') }}" alt="Pavimento Pelvico"
-                    class="img-fluid p-5 right-parallax">
+            <div class="col-lg-4">
+                <img src="{{ asset('assets/frontend/images/parto_consapevole_mockup.png') }}" alt="Parto Consapevole"
+                    class="img-fluid p-5 right-parallax image-max-width">
             </div>
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <h2>Parto Consapevole</h2>
-                <h3>Il momento di “lasciare andare” di “sentire“ il tuo pavimento pelvico, di creare spazio, di accogliere e di prepararsi alla diade</h3>
-                <p>E’ arrivato il momento di “lasciare andare” di “sentire“ il tuo pavimento pelvico, di creare spazio, di accogliere e di prepararsi alla diade.</p>
+                <h3>Il momento di “lasciare andare” di “sentire“ il tuo pavimento pelvico, di creare spazio, di accogliere e
+                    di prepararsi alla diade</h3>
+                <p>E’ arrivato il momento di “lasciare andare” di “sentire“ il tuo pavimento pelvico, di creare spazio, di
+                    accogliere e di prepararsi alla diade.</p>
                 <h4>Cosa troverai all'interno del corso?</h4>
-                <p class="pt-3">Oltre 20 video dedicati alla mamma nell’ottavo e nono mese, gli ultimi due mesi di attesa prima di tenere il suo piccolo tra le braccia.</p>
-                
-                <p>Troverai lezioni dedicate al respiro consapevole, lezioni flow di yoga per il parto, illustrazioni di posizioni utili che potrebbero esserti utili durante il travaglio e parto e tanti contenuti extra preparati appositamente dall’ostetrica Federica Sari.</p>
+                <p class="pt-3">Oltre 20 video dedicati alla mamma nell’ottavo e nono mese, gli ultimi due mesi di
+                    attesa prima di tenere il suo piccolo tra le braccia.</p>
+
+                <p>Troverai lezioni dedicate al respiro consapevole, lezioni flow di yoga per il parto, illustrazioni di
+                    posizioni utili per il travaglio e il parto e tanti contenuti extra
+                    preparati appositamente dall’ostetrica Federica Sari.</p>
                 <a href="{{ URL::to('/courses/2') }}" class="cta-btn">Inizia qui</a>
             </div>
 
@@ -374,8 +389,8 @@
     <!-- /End Section corso #2 about -->
     <!-- Section corso #3 about -->
     <section class="corso py-5">
-        <div class="row d-flex align-items-center page-container">
-            <div class="col-md-8">
+        <div class="row d-flex align-items-center page-container column-reverse-md">
+            <div class="col-lg-8">
                 <h2>Fast 28' Post Parto</h2>
                 <h3>Il tuo programma di allenamento completo e sicuro dedicato al post parto.</h3>
                 <p class="pt-3">Prenditi cura di te e del tuo <strong>pavimento pelvico</strong>: questo
@@ -416,15 +431,15 @@
 
                 <a href="{{ URL::to('/courses/3') }}" class="cta-btn">Inizia qui</a>
             </div>
-            <div class="col-md-4">
-                <img src="{{ asset('assets/frontend/images/corso.png') }}" alt="Pavimento Pelvico"
-                    class="img-fluid p-5 left-parallax">
+            <div class="col-lg-4">
+                <img src="{{ asset('assets/frontend/images/fast_28_mockup.png') }}" alt="Fast 28' Post Parto"
+                    class="img-fluid p-5 left-parallax image-max-width">
             </div>
         </div>
     </section>
     <!-- /End Section corso #3 about -->
     {{-- Reviews --}}
- @include('layouts.includes.reviews')
+    @include('layouts.includes.reviews')
     {{-- /End reviews --}}
     <!-- Section price -->
     <section class="pink-gradient-bg py-5" id="inizia">
@@ -433,14 +448,17 @@
                 <div class="pricing__card--title">
                     Gravidanza Fit
                 </div>
-                <span class="badge bg-dark">Allenamento preparto</span>
+                <span class="badge bg-badge"><i class="fas fa-trophy"></i> Il più richiesto</span>
+
                 <div class="pricing__card--price">
-                    <strike><small>189</small></strike> 89 <sup>€</sup>
+                    <strike><small>149</small></strike> 99 <sup>€</sup>
+
                 </div>
+                <p class="text-center">OFFERTA LANCIO!</p>
                 <div class="pricing__card--features">
                     <ul>
                         <li>Allenamenti specifici dal quarto mese al settimo mese</li>
-                        <li>Oltre 50 video tra cui:</li>
+                        <li><strong>50 video</strong> tra cui:</li>
                     </ul>
                 </div>
 
@@ -449,7 +467,7 @@
                         <li>Imparare a consapevolizzare il respiro <strong>&middot;</strong> <strong>Morning
                                 routine giornaliera dettagliata</strong> <strong>&middot;</strong> Lezioni in
                             circuiti e lezioni flow guidate di tonificazione <strong>&middot;</strong> Pilates
-                            <strong>&middot;</strong> Pilates barre <strong>&middot;</strong> Piccoli attrezzi
+                            <strong>&middot;</strong> Barre <strong>&middot;</strong> Piccoli attrezzi
                             <strong>&middot;</strong> Mobilità <strong>&middot;</strong> Stretching
                             <strong>&middot;</strong> Automassaggio
                         </li>
@@ -458,14 +476,14 @@
 
                 <div class="pricing__card--features">
                     <ul>
-                        <li>Lezioni focus per problematiche specifiche</li>
+                        <li><strong>Lezioni focus per problematiche specifiche</strong></li>
                     </ul>
                 </div>
                 <div class="pricing__card--more">
                     <ul>
-                        <li>Cervicalgia <strong>&middot;</strong> <strong>Pubalgia</strong>
-                            <strong>&middot;</strong> Lombalgia <strong>&middot;</strong> Polsi Dolenti
-                            <strong>&middot;</strong> Circolazione <strong>&middot;</strong> Meditazione
+                        <li><strong>Cervicalgia &middot; Pubalgia
+                                &middot; Lombalgia &middot; Polsi Dolenti
+                                &middot; Circolazione &middot; Meditazione</strong>
                         </li>
                     </ul>
                 </div>
@@ -486,10 +504,13 @@
                 <div class="pricing__card--title">
                     Parto Consapevole
                 </div>
-                <span class="badge bg-warning"><i class="fas fa-trophy"></i> Il più richiesto</span>
+                <span class="badge bg-badge">Allenamento preparto</span>
+
                 <div class="pricing__card--price">
-                    <strike><small>189</small></strike> 89 <sup>€</sup>
+                    <strike><small>99</small></strike> 59 <sup>€</sup>
                 </div>
+                <p class="text-center">OFFERTA LANCIO!</p>
+
                 <div class="pricing__card--features">
                     <ul>
                         <li><strong>Oltre 20 video</strong> dedicati alla mamma nell’ottavo e nono mese, gli
@@ -543,10 +564,12 @@
                 <div class="pricing__card--title">
                     Fast 28' Post Parto
                 </div>
-                <span class="badge bg-dark">Allenamento postparto</span>
+                <span class="badge bg-badge">Allenamento postparto</span>
                 <div class="pricing__card--price">
-                    <strike><small>189</small></strike> 89 <sup>€</sup>
+                    <strike><small>99</small></strike> 59 <sup>€</sup>
                 </div>
+                <p class="text-center">OFFERTA LANCIO!</p>
+
                 <div class="pricing__card--features">
                     <ul>
                         <li><strong>8 video della durata di 28 minuti circa ciascuno.</strong> Ideali per noi
@@ -559,7 +582,7 @@
 
                 <div class="pricing__card--more">
                     <ul>
-                        <li>esercizi mirati e specifici <strong>&middot;</strong> speciale diastasi
+                        <li>esercizi mirati e specifici <strong>&middot;</strong> <strong>speciale diastasi</strong>
                             <strong>&middot;</strong> esercizi focus sul rinforzo del pavimento pelvico
                             <strong>&middot;</strong> video allattamento e postura
                         </li>
@@ -581,8 +604,22 @@
         </div>
     </section>
     <!-- /End section price -->
+    <!-- cta section -->
+    <section class="cta">
+        <div class="cta-text text-center">
+            <h2>Promo Gravidanza Fit e Parto Consapevole</h2>
+            <p>Acquista Gravidanza Fit insieme a Parto Consapevole<br>un percorso specifico adatto dalla 13esima alla
+                31esima
+                settimana<br>e uno specifico dalla 32esima alla 40esima settimana</p>
+            <p>Ad un prezzo ulteriormente scontato!</p>
+            <i class="fas fa-chevron-down"></i>
+            </p>
+            <a href="{{ URL::to('/courses/4') }}" class="cta-btn mx-auto">Scopri la promo </a>
+        </div>
+    </section>
+    <!-- /end cta section -->
     <!-- Feature Section -->
-@include('layouts.includes.features')
+    @include('layouts.includes.features')
     <!-- /End Feature Section -->
     <!-- Faq -->
     <section class="pink-gradient-bg">
@@ -590,9 +627,7 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 text-center py-4">
                     <h2>Domande frequenti</h2>
-                    <p class="mb-3 sub-storytelling">Sono qui per aiutarti a risolvere qualsiasi dubbio!<br>
-                        Sono immediatamente disponibili telefonicamente e via Facebook Messenger e Whatsapp da Lunedì a
-                        Venerdì dalle 9 alle 18!</p>
+                    <p class="mb-3 sub-storytelling">Sono qui per aiutarti a risolvere qualsiasi dubbio!</p>
                 </div>
             </div>
         </div>
@@ -620,7 +655,8 @@
                     </div>
                 </div>
                 <p class="domanda__risposta contenuto">
-                    No, il programma è adatto per gravidanze singole.
+                    Il programma è più indicato per gravidanze singole, in caso di gravidanze gemellari è obbligatorio
+                    consultare il ginecologo!
                 </p>
             </div>
         </div>
@@ -711,7 +747,8 @@
                     </div>
                 </div>
                 <p class="domanda__risposta contenuto">
-                    Tappetino Pilates/Yoga, fitball, cuscino o la softball del pilates, bastone della scopa, pesetti 0,5 max
+                    Tappetino Pilates/Yoga, fitball, cuscino o la softball del pilates, bastone della scopa, booty band,
+                    pesetti 0,5 max
                     1 kilo oppure 2 bottigliette d’acqua, sedia.
                 </p>
             </div>

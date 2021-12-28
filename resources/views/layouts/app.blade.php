@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,27 +13,33 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=M+PLUS+2&family=Nunito:wght@400;700&family=Raleway:wght@400;800&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=M+PLUS+2&family=Nunito:wght@400;700&family=Raleway:wght@400;800&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('/assets/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link href="{{ asset('/assets/frontend/css/styles.css') }}" rel="stylesheet">
-   
+
     {{-- <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('/assets/frontend/css/splide.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('/assets/frontend/css/custom-style.css') }}">
     @stack('css')
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('/assets/backend/img/logo-black.png') }}" alt="Virgina Maternity Coach" class="img-fluid">
+                    <img src="{{ asset('/assets/backend/img/logo-black.png') }}" alt="Virgina Maternity Coach"
+                        class="img-fluid">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -65,7 +72,7 @@
                             @endif
                         @else
 
-                            @if(Auth::user()->role_id == 1)
+                            @if (Auth::user()->role_id == 1)
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.dashboard') }}">Admin</a>
                                 </li>
@@ -75,12 +82,12 @@
                                 </li>
                             @endif
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
                                     <strong>{{ __('Logout') }}</strong>
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
                                     @csrf
                                 </form>
                             </li>
@@ -122,4 +129,5 @@
     </script>
     @stack('js')
 </body>
+
 </html>

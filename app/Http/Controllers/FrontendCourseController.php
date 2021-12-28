@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\CurrencyHelper;
 use Auth;
 use DB;
+use Illuminate\Support\Carbon;
 use App\Models\Course\Course;
 
 class FrontendCourseController extends Controller
@@ -36,20 +37,53 @@ class FrontendCourseController extends Controller
 
         // this is a flag
         $userBoughtCourse = false;
+        $lastingDays = 0;
         // if the authenticated user is not null (so the user is logged in)
+        $courseExpired = false;
         if (!is_null($authUser)) {
             // We check for the authenticated user id. When user_id has access to a course with a specific course_id then it should have a row in the table user_courses
             $userCourse = DB::table('user_courses')->where('user_id', $authUser->id)->where('course_id', $course->id)->first();
             // the user_id and the course_id have a row in the user_courses table
+
             if (!is_null($userCourse)) {
                 // we set the flag to true
                 $userBoughtCourse = true;
+                $boughtOn = Carbon::parse($userCourse->created_at);
+                $courseId = $userCourse->course_id;
+                $today = Carbon::today();
+                $diff = $today->diffInDays($boughtOn);
+                $courseExpiringDays = 180;
+
+                // how much time the courses last when user buy them
+                switch ($courseId) {
+                    case 1: // gravidanza fit
+                        $courseExpiringDays = 120;
+                        break;
+                    case 2: // parto consapevole
+                        $courseExpiringDays = 60;
+                        break;
+                    case 3: // 28 fast post parto
+                        $courseExpiringDays = 60;
+                        break;
+                    case 4: // gravidanza fit + parto consapevole
+                        $courseExpiringDays = 180;
+                        break;
+                    default:
+                        $courseExpiringDays = 180;
+                        break;
+                }
+
+                $lastingDays = $courseExpiringDays - $diff;
+
+                if ($lastingDays < 1) {
+                    $courseExpired = true;
+                }
             }
         }
 
         $currency = CurrencyHelper::getCurrencyString();
         // we return the view and all the variables that will be used in the view with the native php function compact()
-        return view('course', compact('course', 'userBoughtCourse', 'currency', 'categories', 'lessons'));
+        return view('course', compact('course', 'userBoughtCourse', 'currency', 'categories', 'lessons', 'lastingDays', 'courseExpired'));
     }
 
     public function showLesson($lessonId)
@@ -57,7 +91,7 @@ class FrontendCourseController extends Controller
         // getting the authenticated user
         $authUser = Auth::user();
 
-        
+
         $lesson = DB::table('lessons')->where('id', $lessonId)->first();
         // Getting the course based on the courseId
         $course = DB::table('courses')->where('id', $lesson->course_id)->first();
@@ -78,8 +112,8 @@ class FrontendCourseController extends Controller
             if (!is_null($userCourse)) {
                 // we set the flag to true
                 $userBoughtCourse = true;
-            }else{
-                abort(403, 'Non hai accesso a questa lezione, per vederla acquista il corso '.$course->title);
+            } else {
+                abort(403, 'Non hai accesso a questa lezione, per vederla acquista il corso ' . $course->title);
             }
         }
 

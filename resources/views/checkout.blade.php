@@ -34,8 +34,8 @@
                 <div class="col-lg-6 customer-info">
 
                     <div class="step1">
-                        <h4>Informazioni di contatto <span><button class="btn btn-success" onclick="fillInDummyInfo()">Fill in
-                                    dummy info</button></span></h4>
+                        <h4>Informazioni di contatto
+                        </h4>
                         <hr>
                     </div>
 
@@ -87,33 +87,31 @@
                             value="{{ old('city') }}">
                     </div>
                     <div class="form-row">
-                    <div class="col">
-                        <label for="state">Provincia<span style="color: red;">*</span></label>
-                        <input type="text" class="form-control" name="state" id="state" aria-describedby="state"
-                        value="{{ old('state') }}">
-                        {{-- <select id="state" class="custom-select" name="state" autocomplete="off"></select> --}}
-                    </div>
+                        <div class="col">
+                            <label for="state">Provincia<span style="color: red;">*</span></label>
+                            <input type="text" class="form-control" name="state" id="state" aria-describedby="state"
+                                value="{{ old('state') }}">
+                            {{-- <select id="state" class="custom-select" name="state" autocomplete="off"></select> --}}
+                        </div>
 
-                   
+
                         <div class="col">
                             <label for="country">Paese<span style="color: red;">*</span></label>
                             {{-- <input type="text" class="form-control" name="country" id="country" aria-describedby="country"
                             value="{{ old('country') }}"> --}}
                             <select id="country" class="custom-select" name="country">
                                 @foreach ($countries as $country)
-                                    <option value="{{ $country->code }}" autocomplete="off"
-
-                                        @if(!old('country'))
-                                            {{ $country->code =='IT' ? 'selected' : '' }}
-                                        @else
-                                            {{ old('country') == $country->code ? 'selected' : '' }}
-                                        @endif
-                                        >
-                                        {{ stripslashes($country->name) }} </option>
+                                    <option value="{{ $country->code }}" autocomplete="off" @if (!old('country'))
+                                        {{ $country->code == 'IT' ? 'selected' : '' }}
+                                    @else
+                                        {{ old('country') == $country->code ? 'selected' : '' }}
+                                @endif
+                                >
+                                {{ stripslashes($country->name) }} </option>
                                 @endforeach
                             </select>
                         </div>
-                      
+
                     </div>
                     <div class="form-group mt-4">
                         <label for="zip">CAP<span style="color: red;">*</span></label>
@@ -286,7 +284,8 @@
                                                 <div class="paypal-smart-payment-div">
                                                     <input class="form-check-input" type="radio" name="paymentRadio"
                                                         id="paypalSmartPayment" value="">
-                                                    <label class="form-check-label" for="paypalSmartPayment"> Paga con Paypal </label>
+                                                    <label class="form-check-label" for="paypalSmartPayment"> Paga con
+                                                        Paypal </label>
                                                 </div>
                                                 <div class="paypal-image">
                                                     <img src="{{ asset('public/assets/frontend/images/paypal-logo.png') }}"
@@ -334,7 +333,8 @@
 
                         <div id="terms_privacy_div" class="form-group form-check mt-4" style="border: 1px solid red">
                             <input type="checkbox" class="form-check-input" id="terms_checkbox" autocomplete="off">
-                             <label class="form-check-label" for="terms_checkbox">Effettuando l'ordine dichiaro di accettare i
+                            <label class="form-check-label" for="terms_checkbox">Effettuando l'ordine dichiaro di accettare
+                                i
                                 <a target="_blank" href="{{ route('terms') }}">termini e le condizioni</a> la <a
                                     target="_blank" href="{{ route('privacy') }}">privacy policy</a>.
                             </label>
@@ -357,7 +357,8 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <p>La tua richiesta sta per essere eseguita. Questo potrebbe richiedere un po' di tempo. Grazie per la tua pazienza!</p>
+                        <p>La tua richiesta sta per essere eseguita. Questo potrebbe richiedere un po' di tempo. Grazie per
+                            la tua pazienza!</p>
                         <div class="d-flex justify-content-center">
                             <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
                             </div>
