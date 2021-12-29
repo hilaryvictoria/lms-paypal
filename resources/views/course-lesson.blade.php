@@ -38,13 +38,21 @@
                         </div>
                     @else
                         @if ($ext == 'pdf')
-                            <object data="{{ asset('/uploads/course_files/' . $lesson->file) }}" type="application/pdf"
-                                width="100%" height="1200px">
-                                <p>Sembrerebbe che tu non abbia un PDF reader per visualizzare il file <a
-                                        href="assets/gravidanza-fit/pdf/valigia-parto.pdf">clicca qui per scaricarlo!</a>
-                                </p>
-                            </object>
-                        @else
+                            <p class="text-center">
+                                <a href="{{ asset('/uploads/course_files/' . $lesson->file) }}" target="_blank"
+                                    class="btn btn-success" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i>
+                                    Scarica il PDF</a>
+                            </p>
+                            <div class="d-none d-lg-block">
+                                <object data="{{ asset('/uploads/course_files/' . $lesson->file) }}"
+                                    type="application/pdf" width="100%" height="1200px">
+                                    <p>Sembrerebbe che tu non abbia un PDF reader per visualizzare il file <a
+                                            href="{{ asset('/uploads/course_files/' . $lesson->file) }}">clicca qui per
+                                            scaricarlo!</a>
+                                    </p>
+                                </object>
+                            </div>
+                        @elseif ($ext == 'jpg')
                             <img src="{{ asset('/uploads/course_files/' . $lesson->file) }}" alt="" class="img-fluid"
                                 style="max-width:550px;display:block;margin:0 auto;">
                         @endif

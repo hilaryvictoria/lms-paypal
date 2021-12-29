@@ -9,12 +9,43 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title') - {{ config('app.name', 'Laravel') }}</title>
+    <meta name="description"
+        content="Allenamento sicuro in gravidanza: Virginia Maternity Coach ti prepara all’incontro più bello e importante della tua vita.">
+    <meta name="image" content="https://virginiamaternitycoach.it/uploads/images/gravidanza-fit_1.jpg">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Virginia Maternity Coach">
+    <meta itemprop="description"
+        content="Allenamento sicuro in gravidanza: Virginia Maternity Coach ti prepara all’incontro più bello e importante della tua vita.">
+    <meta itemprop="image" content="https://virginiamaternitycoach.it/uploads/images/gravidanza-fit_1.jpg">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Virginia Maternity Coach">
+    <meta name="og:description"
+        content="Allenamento sicuro in gravidanza: Virginia Maternity Coach ti prepara all’incontro più bello e importante della tua vita.">
+    <meta name="og:image" content="https://virginiamaternitycoach.it/uploads/images/gravidanza-fit_1.jpg">
+    <meta name="og:url" content="https://virginiamaternitycoach.it/">
+    <meta name="og:site_name" content="Virginia Maternity Coach">
+    <meta name="og:locale" content="it_IT">
+    <meta name="og:type" content="website">
+
+    {{-- Google Analytics --}}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSKZ2XNVJE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JSKZ2XNVJE');
+    </script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=M+PLUS+2&family=Nunito:wght@400;700&family=Raleway:wght@400;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600;1,700&family=Raleway:wght@400;800&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
@@ -82,8 +113,9 @@
                                 </li>
                             @endif
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                                                    document.getElementById('logout-form').submit();">
                                     <strong>{{ __('Logout') }}</strong>
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -106,7 +138,7 @@
     <script src="{{ asset('/assets/frontend/js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('/assets/frontend/js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
-    <script src="{{ asset('/assets/frontend/js/splide.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/splide.js') }}"></script>
     <script src="{{ asset('/assets/frontend/js/script.js') }}"></script>
     <script src="{{ asset('/assets/frontend/js/jquery.cookie.js') }}"></script>
     <script src="{{ asset('/assets/frontend/js/cookiebar.js') }}"></script>

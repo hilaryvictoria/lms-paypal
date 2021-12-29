@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Allenamento sicuro in gravidanza')
 @section('content')
     <!-- Cover -->
     <section class="cover">
@@ -21,7 +22,7 @@
                 </div>
             </div>
             <!-- Presentazione Virginia -->
-            <div class="col-lg-6">
+            <div class="col-lg-6 m-top-sm">
                 <div class="glass-container">
                     <h2>Mi Presento</h2>
                     <h3>Virginia Flaborea, fondatrice di Virginia Maternity Coach</h3>
@@ -34,7 +35,7 @@
                     <p>
                         Se sei una donna, una futura mamma o una neo-mamma, sono certa che hai sentito anche tu il
                         bisogno di essere motivata, guidata e seguita in maniera scrupolosa e attenta. E' proprio per
-                        questo che ho realizzato per te un percorso strutturato, proggressivo, completo e sicuro. Sono
+                        questo che ho realizzato per te un percorso strutturato, progressivo, completo e sicuro. Sono
                         certa che assieme faremo grandi cose!</p>
 
                     <p><em>Ti aspetto per iniziare il programma!</em> ❤️</p>
@@ -63,7 +64,7 @@
                     <p>Perché non se ne sente mai parlare?</p>
                     <p>Perché a differenza di altri muscoli molto esposti - come il bicipite - il pavimento pelvico,
                         trovandosi in una zona intima, non è visibile e facilmente percepibile. Questo ne comporta una
-                        difficolta di attivazione: è quasi impossibile farlo nel modo corretto!</p>
+                        difficoltà di attivazione: è quasi impossibile farlo nel modo corretto!</p>
                     <p>Questo non significa però che si tratti di un muscolo meno importante degli altri. Infatti anche
                         la cura del pavimento pelvico contribuisce alla definizione della forma fisica con conseguente
                         esaltazione dell'aspetto estetico.</p>
@@ -150,23 +151,23 @@
                                 altalenante. Un giorno abbiamo energia da vendere, quello successivo vorremmo stare
                                 tutto il giorno nel letto.</p>
                             <p>E' una fase straordinaria della vita, ma gli ormoni ci giocano brutti scherzi.</p>
-                            <p>Ho scelto di creare questo portare online per permetterti di allenarti tranquillamente e
+                            <p>Ho scelto di creare questo portale online per permetterti di allenarti tranquillamente e
                                 di svolgere gli allenamenti in qualsiasi momento tu voglia, secondo i tuoi bisogni.</p>
 
-                            <p>Come faccio a sapere che Virginia Maternity Coach è quello giusto?</p>
+                            {{-- <p>Come faccio a sapere che Virginia Maternity Coach è quello giusto?</p>
                             <p>In rete troverai diversi esercizi per mantenerti in forma durante la gravidanza e nel
                                 post parto: anche gratuiti!</p>
                             <p>Ti accorgerai però che spesso mancano di linearità, di un filo logico. Altre volte sono
                                 carenti delle competenze di base. E non sono quasi mai completi!</p>
                             <p>Cosa rischi? Di perdere il tuo tempo. Di non imparare. Di seguire qualche esercizio e poi
-                                lasciar perdere. Chiaramente non è questo ciò che stai cercando!</p>
-                            <p>Fatti guidare dal tuo intuito e dai tuoi sentimenti. Ti invito a seguire gratuitamente
+                                lasciar perdere. Chiaramente non è questo ciò che stai cercando!</p> --}}
+                            {{-- <p>Fatti guidare dal tuo intuito e dai tuoi sentimenti. Ti invito a seguire gratuitamente
                                 alcuni dei miei video esercizi starter. Li ho realizzati per permetterti di valutare la
                                 mia competenza e la qualità dei miei corsi prima di spendere anche un solo centesimo.
                             </p>
                             <p>Se poi ti piaceranno, se avrai capito che fanno per te e sono proprio ciò che stavi
                                 cercando, potrai acquistare i corsi che ti interessano direttamente dal mio portale
-                                Virginia Maternity Coach, ed averli sempre con te.</p>
+                                Virginia Maternity Coach, ed averli sempre con te.</p> --}}
 
 
 
@@ -400,8 +401,10 @@
                 <p><strong>8 video della durata di 28 minuti circa ciascuno.</strong></p>
                 <p>Ideali per noi mamme, che abbiamo poco tempo ma non vogliamo rinunciare al nostro benessere e alla
                     nostra forma fisica.</p>
-                <p>Un video a settimana da ripetere da 4 a 6 giorni su 7, per un totale di <strong>8 settimane</strong>.
-                </p>
+                {{-- <p>Un video a settimana da ripetere da 4 a 6 giorni su 7, per un totale di <strong>8 settimane</strong>.
+                </p> --}}
+                <p>In video a settimana da ripetere almeno 4 volte nell’arco della settimana oppure scorporare il video e
+                    fare <strong>almeno 10 minuti al giorno</strong>.</p>
                 <p>Ogni video è strutturato per essere eseguito in progressione graduale e in sicurezza per una remise
                     en forme ottimale.</p>
                 <p>Obiettivo del programma è la riconnessione con il proprio corpo dopo 9 mesi di gestazione, per

@@ -338,3 +338,16 @@ strike.straight::before {
 .bg-badge {
     background-color: #e29578 !important;
 }
+
+.social-instagram {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: #8a3ab9;
+}
+
+
+.social-instagram span {
+    margin-left: .5rem;
+}

@@ -53,7 +53,7 @@
                             <ul class="video-list">
                                 @foreach ($lessons as $lesson)
                                     @if ($lesson->category_id == $category->id)
-                                        <li><a href="lessons/{{ $lesson->id }}" target="_blank">
+                                        <li><a href="lessons/{{ $lesson->id }}">
                                                 @if (is_null($lesson->video))
                                                     <i class="fas fa-file-pdf"></i> Articolo:
                                                 @else

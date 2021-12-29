@@ -1,7 +1,6 @@
 <section class="reviews py-5 bg-white">
     <div class="row text-center">
         <div class="col-md-8 offset-md-2">
-            <p>Cosa pensano le mamme che si sono già affidate a me?</p>
             <h2>
                 Recensioni <span class="h1-mod">di</span> <span class="h1-mod">Virginia
                     Maternity
@@ -16,17 +15,15 @@
                     <div class="splide__slide">
                         <div class="cardtot p-1">
                             <div class="cardreview">
-                                Sono l'atleta amatoriale e durante il periodo di gravidanza cercavo
-                                l'attività fisica
-                                che mi consentiva di mantenermi in forma e prepararmi per il parto. Ho
-                                trovato Virginia
-                                e mi sono iscritta al suo corso di pilates per la gravidanza. Anche se a me
+                                Durante il periodo di gravidanza cercavo
+                                un'attività fisica
+                                per mantenermi in forma e prepararmi per il parto. Ho
+                                trovato Virginia! Anche se a me
                                 non
                                 piacciono le attività lente, questo corso è stato un grande aiuto sia dal
                                 punto di vista
-                                fisico che della respirazione che è fondamentale durante il parto. Sono
-                                rimasta con
-                                Virgina per 4 mesi e ho fatto attività fino alla data del parto. Sono
+                                fisico che della respirazione che è fondamentale durante il parto. Ho fatto attività
+                                fino alla data del parto. Sono
                                 rimasta contenta,
                                 lei è una grande professionista, oltre a essere una persona di esperienza,
                                 avendo avuto
